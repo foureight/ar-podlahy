@@ -1,0 +1,16 @@
+zerops:
+  - setup: web
+    build:
+      base: nodejs@22
+      deployFiles:
+        - site/~
+    run:
+      base: static
+      routing:
+        headers:
+          - for: "/*"
+            values:
+              X-Robots-Tag: '"noindex, nofollow" always'
+              X-Frame-Options: "'SAMEORIGIN' always"
+              Referrer-Policy: "'strict-origin-when-cross-origin' always"
+              Strict-Transport-Security: '"max-age=31536000" always'
