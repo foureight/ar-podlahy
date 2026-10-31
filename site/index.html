@@ -111,6 +111,7 @@
 body{margin:0;background:#141414}
 a{color:#c9a46a}a:hover{color:#e2c48f}
 .hero{background-image:linear-gradient(180deg,rgba(14,14,14,.78) 0%,rgba(14,14,14,.62) 45%,rgba(14,14,14,.92) 100%),url(/img/po-parkety.jpg);background-size:cover;background-position:center}
+.dd{position:relative;display:flex;align-items:center}.dd>a{display:flex;align-items:center;gap:5px}.dd>a svg{transition:transform .2s}.ddm{position:absolute;top:100%;left:-16px;padding-top:14px;display:none;z-index:20}.ddm>div{background:#141414;border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:8px;display:flex;flex-direction:column;min-width:170px;box-shadow:0 12px 32px rgba(0,0,0,.35)}.ddm a{padding:10px 12px;border-radius:5px;font-size:13px}.ddm a:hover{background:rgba(255,255,255,.06)}.dd:hover .ddm,.dd:focus-within .ddm{display:block}.dd:hover>a svg{transform:rotate(180deg)}
 .nav a{color:#fff;text-decoration:none}.nav a:hover{color:#c9a46a}
 .foot a{color:rgba(255,255,255,.72);text-decoration:none}.foot a:hover{color:#c9a46a}
 details summary{cursor:pointer;list-style:none}details summary::-webkit-details-marker{display:none}
@@ -159,17 +160,14 @@ input,select,textarea{font:inherit}
 <!-- HERO + HEADER -->
 <section class="hero" style="color: #fff;">
 <header style="max-width: 1240px; margin: 0 auto; padding: 22px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid rgba(255,255,255,.12);">
-<a href="#" aria-label="AR podlahy – úvod" class="arlogo" style="width: 193px; height: 34px;"><img src="/img/logo-white.png" alt="AR podlahy – řemeslo od roku 1991" class="lA"><img src="/img/logo-white.png" alt="" aria-hidden="true" class="lB"><img src="/img/logo-white.png" alt="" aria-hidden="true" class="lC"><span class="lwrap"><img src="/img/logo-white.png" alt="" aria-hidden="true" class="lW"><img src="/img/logo-white.png" alt="" aria-hidden="true" class="lT"></span></a>
+<a href="/" aria-label="AR podlahy – úvod" class="arlogo" style="width: 193px; height: 34px;"><img src="/img/logo-white.png" alt="AR podlahy – řemeslo od roku 1991" class="lA"><img src="/img/logo-white.png" alt="" aria-hidden="true" class="lB"><img src="/img/logo-white.png" alt="" aria-hidden="true" class="lC"><span class="lwrap"><img src="/img/logo-white.png" alt="" aria-hidden="true" class="lW"><img src="/img/logo-white.png" alt="" aria-hidden="true" class="lT"></span></a>
 <nav class="nav navlinks" aria-label="Hlavní menu" style="display: flex; align-items: center; gap: 16px; font-size: 12.5px; font-weight: 600; letter-spacing: .01em; flex-wrap: nowrap; white-space: nowrap; justify-content: flex-end;">
-<a href="#" style="color: #c9a46a;">Úvod &amp; reference</a>
-<a href="#">Podlahy</a>
-<a href="#">Dveře</a>
-<a href="#">Produkty &amp; služby</a>
-<a href="#">Projekty</a>
-<a href="#">Blog o podlahách</a>
+<div class="dd"><a href="#sluzby" aria-haspopup="true">Co děláme<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></a><div class="ddm"><div><a href="#">Podlahy</a><a href="#">Dveře</a></div></div></div>
+<a href="#sluzby">Co umíme</a>
+<a href="#reference">Reference</a>
+<a href="#">Blog</a>
 <a href="#">O nás</a>
-<a href="#">Kontakty</a>
-<a href="#" aria-label="Košík" style="display: flex; align-items: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"></path><path d="M6 6 5 3H2"></path><circle cx="9" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle></svg></a>
+<a href="#kontakt">Kontakty</a>
 <a href="#poptavka" style="background: #8a6a3f; color: #fff; padding: 12px 16px; border-radius: 6px; font-weight: 800; margin-left: 4px;">Chci konzultaci a nabídku</a>
 </nav>
 <button class="burger" aria-label="Otevřít menu" style="display: none; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.3); border-radius: 6px; background: transparent; color: #fff;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
@@ -218,7 +216,7 @@ input,select,textarea{font:inherit}
 </section>
 
 <!-- SLUŽBY -->
-<section style="max-width: 1240px; margin: 0 auto; padding: clamp(56px, 6vw, 80px) 24px; display: flex; flex-direction: column; gap: 32px;">
+<section id="sluzby" style="max-width: 1240px; margin: 0 auto; padding: clamp(56px, 6vw, 80px) 24px; display: flex; flex-direction: column; gap: 32px;">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px;">
 <div style="max-width: 640px; display: flex; flex-direction: column; gap: 14px;">
 <span style="font-size: 13px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #8a6a3f;">Co děláme</span>
@@ -404,7 +402,7 @@ input,select,textarea{font:inherit}
 </section>
 
 <!-- REFERENCE BUDOVY -->
-<section style="max-width: 1240px; margin: 0 auto; padding: clamp(56px, 6vw, 80px) 24px; display: flex; flex-direction: column; gap: 36px;">
+<section id="reference" style="max-width: 1240px; margin: 0 auto; padding: clamp(56px, 6vw, 80px) 24px; display: flex; flex-direction: column; gap: 36px;">
 <div style="max-width: 720px; display: flex; flex-direction: column; gap: 14px;">
 <span style="font-size: 13px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #8a6a3f;">Reference</span>
 <h2 style="margin: 0; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.1; font-weight: 900;">Stejnou péči jako Pražský hrad dostane i podlaha u vás doma</h2>
@@ -486,7 +484,7 @@ input,select,textarea{font:inherit}
 </section>
 
 <!-- FOOTER -->
-<footer class="foot" style="background: #0e0e0e; color: rgba(255,255,255,.72); font-size: 14px;">
+<footer id="kontakt" class="foot" style="background: #0e0e0e; color: rgba(255,255,255,.72); font-size: 14px;">
 <div style="max-width: 1240px; margin: 0 auto; padding: 64px 24px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 36px;">
 <div style="display: flex; flex-direction: column; gap: 16px;">
 <img src="/img/logo-white.png" alt="AR podlahy" style="height: 34px; width: auto; align-self: flex-start;">
@@ -494,8 +492,7 @@ input,select,textarea{font:inherit}
 </div>
 <div class="d-only" style="display: contents;"><nav aria-label="Odkazy v patičce" style="display: flex; flex-direction: column; gap: 6px; line-height: 1.6;">
 <strong style="color: #fff; font-size: 15px; margin-bottom: 4px;">Menu</strong>
-<a href="#">Podlahy</a><a href="#">Dveře</a><a href="#">Produkty &amp; služby</a><a href="#">Projekty</a><a href="#">Blog o podlahách</a><a href="#">O nás</a><a href="#">Kontakty</a>
-</nav>
+<a href="#">Podlahy</a><a href="#">Dveře</a><a href="#sluzby">Co umíme</a><a href="#reference">Reference</a><a href="#">Blog</a><a href="#">O nás</a><a href="#kontakt">Kontakty</a></nav>
 <div style="display: flex; flex-direction: column; gap: 6px; line-height: 1.6;">
 <strong style="color: #fff; font-size: 15px; margin-bottom: 4px;">Smluvní podmínky</strong>
 <a href="#">Obchodní podmínky</a>
@@ -514,7 +511,7 @@ input,select,textarea{font:inherit}
 </address></div>
 <div class="footacc m-only" style="display: flex; flex-direction: column; border-bottom: 1px solid rgba(255,255,255,.12);">
 <details style="border-top: 1px solid rgba(255,255,255,.12);"><summary style="display: flex; justify-content: space-between; align-items: center; min-height: 48px; color: #fff; font-size: 15px; font-weight: 700;">Menu<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
-<nav aria-label="Odkazy v patičce" style="display: flex; flex-direction: column; gap: 8px; line-height: 1.6; padding: 0 0 18px;"><a href="#">Podlahy</a><a href="#">Dveře</a><a href="#">Produkty &amp; služby</a><a href="#">Projekty</a><a href="#">Blog o podlahách</a><a href="#">O nás</a><a href="#">Kontakty</a></nav>
+<nav aria-label="Odkazy v patičce" style="display: flex; flex-direction: column; gap: 8px; line-height: 1.6; padding: 0 0 18px;"><a href="#">Podlahy</a><a href="#">Dveře</a><a href="#sluzby">Co umíme</a><a href="#reference">Reference</a><a href="#">Blog</a><a href="#">O nás</a><a href="#kontakt">Kontakty</a></nav>
 </details>
 <details style="border-top: 1px solid rgba(255,255,255,.12);"><summary style="display: flex; justify-content: space-between; align-items: center; min-height: 48px; color: #fff; font-size: 15px; font-weight: 700;">Smluvní podmínky<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
 <div style="display: flex; flex-direction: column; gap: 8px; line-height: 1.6; padding: 0 0 18px;"><a href="#">Obchodní podmínky</a><a href="#">Ochrana osobních údajů</a><a href="#">Cookies</a></div>
@@ -543,7 +540,8 @@ input,select,textarea{font:inherit}
 <div id="mmenu" hidden style="position:fixed;inset:0;z-index:50;background:#0e0e0e;color:#fff;font-family:'Montserrat',system-ui,sans-serif;display:flex;flex-direction:column;overflow:auto">
 <div style="padding:20px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.12)"><img src="/img/logo-white.png" alt="AR podlahy" style="height:30px;width:auto"><button id="mclose" aria-label="Zavřít menu" style="width:44px;height:44px;border:1px solid rgba(255,255,255,.3);border-radius:6px;background:transparent;color:#fff;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div>
 <nav aria-label="Mobilní menu" class="mnav" style="padding:12px 24px;display:flex;flex-direction:column">
-<a href="/">Úvod &amp; reference</a><a href="#">Podlahy</a><a href="#">Dveře</a><a href="#">Produkty &amp; služby</a><a href="#">Projekty</a><a href="#">Blog o podlahách</a><a href="#">O nás</a><a href="#">Kontakty</a></nav>
+<a href="#sluzby" style="border-bottom:0;padding-bottom:8px">Co děláme</a><div style="display:flex;flex-direction:column;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:8px;border-left:2px solid #c9a46a;margin-left:2px"><a href="#" style="padding:10px 0 10px 16px;font-size:16px;font-weight:600;color:rgba(255,255,255,.8);border:0">Podlahy</a><a href="#" style="padding:10px 0 10px 16px;font-size:16px;font-weight:600;color:rgba(255,255,255,.8);border:0">Dveře</a></div><a href="#sluzby">Co umíme</a><a href="#reference">Reference</a><a href="#">Blog</a><a href="#">O nás</a><a href="#kontakt">Kontakty</a>
+</nav>
 <div class="mfoot" style="padding:20px 24px 32px;display:flex;flex-direction:column;gap:12px"><a href="#poptavka" class="mcta" style="background:#8a6a3f;color:#fff;text-align:center;padding:17px;border-radius:8px;font-weight:800;text-decoration:none">Chci konzultaci a nabídku</a><a href="tel:+420605257236" style="border:1px solid rgba(255,255,255,.4);color:#fff;text-align:center;padding:16px;border-radius:8px;font-weight:700;text-decoration:none">Zavolat +420 605 257 236</a></div></div>
 <style>.mnav a{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:19px;font-weight:800;color:#fff;text-decoration:none}#mmenu[hidden]{display:none !important}
 #mmenu:not([hidden]) #mclose{animation:mSpin .45s cubic-bezier(.16,1,.3,1) both}
