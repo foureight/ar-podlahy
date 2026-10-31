@@ -271,6 +271,29 @@ input,select,textarea{font:inherit}
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;"><div style="background: #fff; border: 1px solid #e6ddcf; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px;"><strong style="font-size: 19px;">Masivní dřevěné podlahy</strong><p style="margin: 0; font-size: 15px; line-height: 1.65; color: #4a443b;">Poctivá prkna z masivu, nejčastěji dub. Celoplošně lepená vydrží generace a dají se opakovaně brousit.</p></div><div style="background: #fff; border: 1px solid #e6ddcf; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px;"><strong style="font-size: 19px;">Vícevrstvé (třívrstvé) podlahy</strong><p style="margin: 0; font-size: 15px; line-height: 1.65; color: #4a443b;">Nášlapná vrstva z ušlechtilého dřeva na stabilním nosiči. Rychlá pokládka a ideální volba na podlahové topení.</p></div><div style="background: #fff; border: 1px solid #e6ddcf; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px;"><strong style="font-size: 19px;">Parkety</strong><p style="margin: 0; font-size: 15px; line-height: 1.65; color: #4a443b;">Klasické vlysy, rybí kost i mozaika. Pokládka, broušení a lak nebo olej podle toho, jak má podlaha vypadat.</p></div><div style="background: #fff; border: 1px solid #e6ddcf; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px;"><strong style="font-size: 19px;">Historické podlahy</strong><p style="margin: 0; font-size: 15px; line-height: 1.65; color: #4a443b;">Vídeňské a benátské čtverce a kazetové parkety. Zkušenost z památek, jako je Apoštolská nunciatura.</p></div></div>
 </section>
 
+<!-- KALKULAČKA -->
+<section id="kalkulacka" style="background: #1a1a1a; color: #fff;">
+<div style="max-width: 1240px; margin: 0 auto; padding: clamp(56px, 6vw, 80px) 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px 64px; align-items: center;">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #c9a46a;">Kalkulačka</span>
+<h2 style="margin: 0; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.1; font-weight: 900;">Spočítejte si orientační cenu podlahy</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: rgba(255,255,255,.78);">Vyberte druh podlahy a zadejte plochu. Kalkulačka spočítá orientační cenu materiálu podle našeho ceníku. Pokládku a přípravu podkladu naceníme po bezplatném zaměření, protože záleží na stavu podkladu.</p>
+</div>
+<form id="calc" onsubmit="return false" style="background: #fff; color: #1a1a1a; border-radius: 18px; padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; gap: 18px;">
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 700;">Druh podlahy<select id="calc-typ" style="border: 1px solid #d6cdbf; border-radius: 8px; padding: 14px; font-size: 16px; background: #fff; width: 100%; box-sizing: border-box;"><option value="569" data-form="Dřevěná vícevrstvá podlaha">Dřevěná vícevrstvá podlaha / parkety – od 569 Kč/m²</option><option value="482" data-form="Vinyl">Vinylové dílce (Thermofix, Fatraclic, Imperio) – od 482 Kč/m²</option><option value="330" data-form="Vinyl">PVC v rolích (Novilon) – od 330 Kč/m²</option><option value="223" data-form="Laminátová podlaha">Laminátová podlaha (Haro, Egger) – od 223 Kč/m²</option><option value="662" data-form="Potřebuji poradit s technickým řešením">Korková podlaha (Haro) – od 662 Kč/m²</option><option value="154" data-form="Koberec">Koberec – od 154 Kč/m²</option><option value="399" data-form="Potřebuji poradit s technickým řešením">Terasa (WPC, exotika, jehličnany) – od 399 Kč/m²</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 700;">Plocha v m²<input id="calc-m2" type="number" min="1" step="1" value="50" inputmode="numeric" style="border: 1px solid #d6cdbf; border-radius: 8px; padding: 14px; font-size: 16px; background: #fff; width: 100%; box-sizing: border-box;"></label>
+<label style="display: flex; gap: 10px; align-items: center; font-size: 15px; font-weight: 600;"><input id="calc-prorez" type="checkbox" checked style="width: 20px; height: 20px; accent-color: #8a6a3f;">Připočítat prořez 8 %</label>
+<div style="background: #f5f1ea; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 6px;">
+<span style="font-size: 14px; color: #6b655b;">Materiál orientačně od</span>
+<strong id="calc-vysledek" style="font-size: clamp(32px, 3.4vw, 44px); font-weight: 900; line-height: 1.1; color: #1a1a1a;">30 726 Kč</strong>
+<span id="calc-detail" style="font-size: 13px; color: #6b655b;">54 m² × 569 Kč/m² · bez pokládky a přípravy podkladu</span>
+</div>
+<a id="calc-cta" href="#poptavka" style="background: #8a6a3f; color: #fff; text-align: center; text-decoration: none; padding: 17px; border-radius: 8px; font-weight: 800; font-size: 16px;">Chci přesnou nabídku včetně pokládky</a>
+<span style="font-size: 12px; color: #8a8378; line-height: 1.5;">Orientační výpočet z ceníku materiálu „od“. Konečná cena závisí na konkrétním výrobku, stavu podkladu a rozsahu prací.</span>
+</form>
+</div>
+</section>
+
 <!-- LOKALITA -->
 <section style="background: #ece5d8;">
 <div style="max-width: 1240px; margin: 0 auto; padding: clamp(56px, 6vw, 80px) 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px 64px; align-items: center;">
@@ -478,6 +501,13 @@ function o(){m.hidden=false;document.body.style.overflow='hidden'}function c(){m
 if(b){b.addEventListener('click',o)}document.getElementById('mclose').addEventListener('click',c);
 m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',c)});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')c()});})();
+</script>
+<script>
+(function(){var t=document.getElementById('calc-typ'),m=document.getElementById('calc-m2'),p=document.getElementById('calc-prorez'),r=document.getElementById('calc-vysledek'),d=document.getElementById('calc-detail'),c=document.getElementById('calc-cta');if(!t)return;
+function f(n){return Math.round(n).toLocaleString('cs-CZ')}
+function u(){var a=Math.max(0,parseFloat(m.value)||0),k=p.checked?1.08:1,cena=+t.value,q=Math.ceil(a*k);r.textContent=f(q*cena)+' Kč';d.textContent=q+' m² × '+cena+' Kč/m² · bez pokládky a přípravy podkladu'}
+[t,m,p].forEach(function(e){e.addEventListener('input',u);e.addEventListener('change',u)});u();
+c.addEventListener('click',function(){var pl=document.querySelector('#poptavka input[name=plocha]'),ty=document.querySelector('#poptavka select[name=typ]');if(pl)pl.value=m.value;if(ty){var want=t.options[t.selectedIndex].getAttribute('data-form');for(var i=0;i<ty.options.length;i++){if(ty.options[i].text===want){ty.selectedIndex=i;break}}}});})();
 </script>
 </body>
 </html>
