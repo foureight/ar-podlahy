@@ -26,4 +26,4 @@
 - Napojení domény ar-podlahy.cz a přesměrování starých URL po schválení.
 
 ## Poznámka k nástrojům
-Generátory stránek (pages.py, landing.py, landing_more.py, mobile.py, facts.py) byly jen v dočasném pracovním prostoru této konverzace. V novém chatu se pracuje přímo z repa `foureight/ar-podlahy` (statické HTML v `site/`) a z design artifactu.
+Generátory stránek (pages.py, landing.py, landing_more.py, mobile.py, facts.py) jsou zkopírované v repu ve složce `tools/` (cesty v nich vedou do dočasného prostoru staré konverzace – při dalším použití je upravit). Design soubory (.dc.html, canvas.json) jdou stáhnout z design artifactu.
