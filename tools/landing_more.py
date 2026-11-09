@@ -1,0 +1,200 @@
+# Další stránky z menu „Co děláme“. Texty jsou obecné – klient je opraví a doplní ceny.
+from landing import CONF, ORDER, COMMON_FAQ_ZARUKA, COMMON_FAQ_TERMIN, STERKA, LISTY
+
+IND = 'individuálně po zaměření'
+VZORKY = ('Můžu si materiál prohlédnout?', 'Ano, vzorky máte k dispozici v showroomu v Praze-Radotíně. Nebo vám je přivezeme na zaměření.')
+B3 = lambda price: ['Zaměření zdarma do 48 hodin', price, 'Záruka až 12 let na materiál, 24 měsíců na práci']
+
+MORE = {
+ 'historicke': dict(
+    slug='historicke-podlahy-praha', design='Historicke-podlahy', crumb='Historické podlahy Praha', form='Parkety', what='renovaci historické podlahy',
+    title='Historické podlahy Praha – renovace vídeňských a benátských čtverců | AR podlahy',
+    desc='Renovace a obnova historických podlah v Praze: vídeňské a benátské čtverce, kazetové parkety a intarzie. Zkušenost z památkových objektů. Zaměření zdarma do 48 hodin.',
+    service='Renovace historických podlah', minprice=600,
+    h1='Historické podlahy v Praze – obnova a renovace', sub='Vídeňské a benátské čtverce, kazetové parkety a intarzie. S citem pro původní vzor.',
+    bullets=B3('Renovace od 600 Kč/m², obnova vzoru individuálně'),
+    eyebrow='Co děláme', h2='Zachráníme podlahu, která pamatuje generace',
+    cards=[
+      ('Vídeňské a benátské čtverce', 'Rozebrání, očištění a znovusložení původního vzoru. Chybějící dílce doplníme tak, aby oprava nebyla vidět.', IND),
+      ('Kazetové parkety a intarzie', 'Obnova složitých vzorů a intarzií z různých dřevin, včetně výroby chybějících dílů.', IND),
+      ('Broušení a povrchová úprava', 'Šetrné broušení, tmelení spar a lak nebo olej podle charakteru objektu.', 'od 600 Kč/m²'),
+      ('Památkové objekty', 'Práce podle požadavků památkářů, s dokumentací postupu. Zkušenost např. z Apoštolské nunciatury.', IND),
+    ],
+    calc=None, refs=True,
+    faq=[
+      ('Kolik stojí obnova historické podlahy?', 'Samotná renovace (broušení, tmel, lak nebo olej) začíná od 600 Kč/m² bez DPH. Rozebrání, doplnění a znovusložení vzoru naceníme po prohlídce – záleží na stavu a rozsahu.'),
+      ('Dá se zachránit i hodně poškozená podlaha?', 'Ve většině případů ano. Poškozené dílce vyměníme nebo vyrobíme nové, zbytek původní podlahy zachováme. Při zaměření posoudíme, co je reálné.'),
+      ('Pracujete i v památkově chráněných objektech?', 'Ano. Postup přizpůsobíme požadavkům památkové péče a průběh prací zdokumentujeme.'),
+      ('Lak, nebo olej?', 'U historických podlah často volíme olej nebo vosk, které zachovají přirozený vzhled. V místech s velkým provozem doporučíme odolný lak.'),
+      COMMON_FAQ_TERMIN, COMMON_FAQ_ZARUKA]),
+ 'laminat': dict(
+    slug='laminatove-podlahy-praha', design='Laminatove-podlahy', crumb='Laminátové podlahy Praha', form='Laminátová podlaha', what='laminátovou podlahu',
+    title='Laminátové podlahy Praha – prodej a pokládka, od 223 Kč/m² | AR podlahy',
+    desc='Laminátové plovoucí podlahy v Praze a Středočeském kraji. Materiál od 223 Kč/m², pokládka včetně podložky a lišt, zaměření zdarma do 48 hodin.',
+    service='Prodej a pokládka laminátových podlah', minprice=223,
+    h1='Laminátové podlahy v Praze – prodej a pokládka', sub='Odolná a cenově dostupná podlaha do bytu, domu i kanceláře.',
+    bullets=B3('Laminát od 223 Kč/m²'),
+    eyebrow='Co pokládáme', h2='Laminát, který vydrží každodenní provoz',
+    cards=[
+      ('Laminátové podlahy', 'Odolný povrch proti poškrábání, široký výběr dekorů dřeva i kamene. Vhodné do bytů, domů i kanceláří.', 'materiál od 223 Kč/m²'),
+      ('Plovoucí pokládka', 'Dílce se spojí zámkem bez lepení na podložku. Rychlá montáž a čistá práce.', 'pokládka po zaměření'),
+      ('Příprava podkladu', 'Laminát potřebuje rovný podklad. Nerovnosti vyrovnáme samonivelační stěrkou.', f'stěrka od {STERKA} Kč/m² (5 mm)'),
+      ('Lišty a přechody', 'Soklové lišty v dekoru podlahy, přechodové a ukončovací profily.', f'od {LISTY} Kč/bm'),
+    ],
+    calc=[('Laminátová podlaha', 223, None, 'Laminátová podlaha')], refs=False,
+    faq=[
+      ('Kolik stojí laminátová podlaha s pokládkou?', f'Laminát začíná od 223 Kč/m², stěrka od {STERKA} Kč/m² při 5 mm a lišty od {LISTY} Kč/bm. Pokládku naceníme po zaměření. Ceny jsou bez DPH.'),
+      ('Laminát, nebo vinyl?', 'Laminát je cenově dostupný a odolný proti poškrábání. Vinyl je odolnější vůči vodě a tišší. Poradíme podle místnosti a provozu.'),
+      ('Lze laminát na podlahové topení?', 'Ano, většina laminátů je pro podlahové topení vhodná. Důležitá je správná podložka a vysušený podklad.'),
+      VZORKY, COMMON_FAQ_TERMIN, COMMON_FAQ_ZARUKA]),
+ 'korek': dict(
+    slug='korkove-podlahy-praha', design='Korkove-podlahy', crumb='Korkové podlahy Praha', form='Potřebuji poradit s technickým řešením', what='korkovou podlahu',
+    title='Korkové podlahy Praha – prodej a pokládka, od 662 Kč/m² | AR podlahy',
+    desc='Korkové podlahy v Praze a Středočeském kraji – teplé, tiché a příjemné na chůzi. Materiál od 662 Kč/m², zaměření zdarma do 48 hodin.',
+    service='Prodej a pokládka korkových podlah', minprice=662,
+    h1='Korkové podlahy v Praze – prodej a pokládka', sub='Teplá, tichá a pružná podlaha z přírodního materiálu.',
+    bullets=B3('Korkové podlahy od 662 Kč/m²'),
+    eyebrow='Co pokládáme', h2='Přírodní podlaha, která hřeje i tlumí kroky',
+    cards=[
+      ('Korkové podlahy', 'Teplé na dotek, pružné a tiché. Ideální do dětských pokojů, ložnic a všude, kde chodíte bosí.', 'materiál od 662 Kč/m²'),
+      ('Lepený i plovoucí korek', 'Lepené korkové dílce nebo plovoucí systém se zámkem – podle podkladu a místnosti.', 'pokládka po zaměření'),
+      ('Příprava podkladu', 'Rovný a suchý podklad je základ. Vyrovnáme ho samonivelační stěrkou.', f'stěrka od {STERKA} Kč/m² (5 mm)'),
+      ('Povrchová úprava', 'Lak nebo olej pro snadnou údržbu a delší životnost.', IND),
+    ],
+    calc=[('Korková podlaha', 662, None, 'Potřebuji poradit s technickým řešením')], refs=False,
+    faq=[
+      ('Kolik stojí korková podlaha?', f'Korek začíná od 662 Kč/m², stěrka od {STERKA} Kč/m² při 5 mm. Pokládku naceníme po zaměření. Ceny jsou bez DPH.'),
+      ('Je korek vhodný do koupelny nebo kuchyně?', 'Lakovaný korek odolá běžné vlhkosti. Do míst s velkým množstvím vody doporučíme vhodný typ – poradíme při zaměření.'),
+      ('Lze korek na podlahové topení?', 'Korek dobře izoluje, proto na podlahové topení volíme tenčí typy. Doporučíme vhodné řešení.'),
+      VZORKY, COMMON_FAQ_TERMIN, COMMON_FAQ_ZARUKA]),
+ 'sterky': dict(
+    slug='lite-epoxidove-sterky-praha', design='Lite-sterky', crumb='Lité epoxidové stěrky Praha', form='Litá epoxidová stěrka', what='litou stěrku',
+    title='Lité epoxidové stěrky Praha – bezespáré podlahy | AR podlahy',
+    desc='Lité epoxidové a polyuretanové stěrky v Praze a Středočeském kraji – bezespáré podlahy do bytů, garáží, provozoven i skladů. Zaměření zdarma do 48 hodin.',
+    service='Lité epoxidové stěrky', minprice=STERKA,
+    h1='Lité epoxidové stěrky v Praze', sub='Bezespáré, odolné a snadno udržovatelné podlahy do bytu, garáže i provozovny.',
+    bullets=B3('Cena podle plochy a systému – po zaměření'),
+    eyebrow='Co děláme', h2='Podlaha bez spár, která vydrží zátěž',
+    cards=[
+      ('Epoxidové stěrky', 'Velmi odolné proti oděru a chemikáliím. Do garáží, dílen, skladů a provozoven.', IND),
+      ('Dekorativní stěrky do interiéru', 'Moderní bezespárý vzhled do bytů a obchodů v různých odstínech.', IND),
+      ('Příprava podkladu', 'Broušení, penetrace a vyrovnání podkladu – základ trvanlivosti stěrky.', f'vyrovnání od {STERKA} Kč/m² (5 mm)'),
+      ('Ochranné nátěry', 'Nátěry betonových podlah proti prachu a opotřebení.', IND),
+    ],
+    calc=None, refs=False, note='Cenu stěrky připravíme po zaměření podle plochy, podkladu a zvoleného systému. Ceny jsou bez DPH.',
+    faq=[
+      ('Kolik stojí litá stěrka?', 'Cena záleží na ploše, stavu podkladu a zvoleném systému. Samotné vyrovnání podkladu stojí od 250 Kč/m² při 5 mm. Celkovou cenu připravíme po zaměření. Ceny jsou bez DPH.'),
+      ('Hodí se stěrka do bytu?', 'Ano, dekorativní stěrky vytvoří moderní bezespárou podlahu. Do bytu volíme systémy, které jsou příjemné na chůzi a snadno se udržují.'),
+      ('Jak dlouho trvá, než se po stěrce dá chodit?', 'Závisí na systému a teplotě. Přesný harmonogram včetně doby vytvrzení dostanete s nabídkou.'),
+      ('Lze stěrku na podlahové topení?', 'Ano, stěrky dobře vedou teplo. Podklad musí být vytopený a suchý.'),
+      COMMON_FAQ_TERMIN, COMMON_FAQ_ZARUKA]),
+ 'terasy': dict(
+    slug='terasy-praha', design='Terasy', crumb='Terasy Praha', form='Potřebuji poradit s technickým řešením', what='terasu',
+    title='Terasy Praha – WPC, exotické dřevo i jehličnany, od 399 Kč/m² | AR podlahy',
+    desc='Stavba a pokládka teras v Praze a Středočeském kraji: WPC, exotické dřeviny a jehličnany. Materiál od 399 Kč/m², zaměření zdarma do 48 hodin.',
+    service='Stavba a pokládka teras', minprice=399,
+    h1='Terasy v Praze – WPC, exotika i jehličnany', sub='Venkovní podlaha, která vydrží počasí a bude krásná i za deset let.',
+    bullets=B3('Materiál od 399 Kč/m²'),
+    eyebrow='Co stavíme', h2='Terasa na míru vašemu domu',
+    cards=[
+      ('WPC terasy', 'Kompozit dřeva a plastu – nepraská, netřísní a nepotřebuje nátěry. Minimální údržba.', 'materiál od 399 Kč/m²'),
+      ('Exotické dřeviny', 'Tvrdé a trvanlivé dřevo s krásnou kresbou, přirozeně odolné vůči povětrnosti.', 'materiál od 399 Kč/m²'),
+      ('Jehličnany', 'Cenově dostupné řešení z modřínu nebo borovice, s ošetřením olejem.', 'materiál od 399 Kč/m²'),
+      ('Podkladní konstrukce', 'Rošt, terče a odvodnění – správná konstrukce rozhoduje o životnosti terasy.', IND),
+    ],
+    calc=[('Terasa (WPC / exotika / jehličnany)', 399, None, 'Potřebuji poradit s technickým řešením')], refs=False,
+    note='Ceny jsou bez DPH. Materiál se počítá včetně prořezu, montáž a konstrukci naceníme po zaměření.',
+    faq=[
+      ('Kolik stojí terasa?', 'Materiál začíná od 399 Kč/m². Cenu montáže a podkladní konstrukce připravíme po zaměření – záleží na podkladu, výšce a tvaru terasy. Ceny jsou bez DPH.'),
+      ('WPC, nebo dřevo?', 'WPC je téměř bezúdržbové. Dřevo je přírodní a krásně stárne, ale potřebuje pravidelné ošetření olejem. Poradíme podle vašich představ.'),
+      ('Jak se o terasu starat?', 'WPC stačí umýt. Dřevěnou terasu doporučujeme jednou až dvakrát ročně ošetřit olejem.'),
+      VZORKY, COMMON_FAQ_TERMIN, COMMON_FAQ_ZARUKA]),
+ 'podklad': dict(
+    slug='priprava-podkladu-praha', design='Priprava-podkladu', crumb='Příprava podkladu Praha', form='Potřebuji poradit s technickým řešením', what='přípravu podkladu',
+    title='Příprava podkladu Praha – samonivelační stěrky od 250 Kč/m² | AR podlahy',
+    desc='Příprava podkladu pod podlahy v Praze a Středočeském kraji: měření vlhkosti, vyrovnání samonivelační stěrkou od 250 Kč/m², penetrace. Zaměření zdarma do 48 hodin.',
+    service='Příprava podkladu a vyrovnání stěrkou', minprice=STERKA,
+    h1='Příprava podkladu v Praze', sub='Základ, který rozhoduje o tom, jak dlouho vám podlaha vydrží.',
+    bullets=B3(f'Samonivelační stěrka od {STERKA} Kč/m² (5 mm)'),
+    eyebrow='Co děláme', h2='Rovný a suchý podklad pod každou podlahu',
+    cards=[
+      ('Měření vlhkosti', 'Vlhkost podkladu měříme vždy před pokládkou. Příliš vlhký podklad je nejčastější příčina problémů s podlahou.', 'v rámci zaměření zdarma'),
+      ('Samonivelační stěrky', 'Vyrovnání nerovností litou stěrkou – nutné hlavně pod vinyl, PVC a lepené dřevo.', f'od {STERKA} Kč/m² (5 mm)'),
+      ('Penetrace a opravy', 'Zpevnění podkladu penetrací, oprava prasklin a výtluků.', IND),
+      ('Odstranění staré podlahy', 'Demontáž původních krytin a lepidel, aby nová podlaha měla pevný základ.', IND),
+    ],
+    calc=[('Vyrovnání podkladu stěrkou (5 mm)', 0, STERKA, 'Potřebuji poradit s technickým řešením')], refs=False,
+    faq=[
+      ('Kolik stojí vyrovnání podkladu?', f'Samonivelační stěrka stojí od {STERKA} Kč/m² při tloušťce 5 mm. Penetraci, opravy a demontáž staré podlahy naceníme po zaměření. Ceny jsou bez DPH.'),
+      ('Proč je příprava podkladu tak důležitá?', 'Nerovnosti a vlhkost se propíšou do každé podlahy – vinyl ukáže hrboly, dřevo se může zvlnit. Dobře připravený podklad prodlouží životnost podlahy o roky.'),
+      ('Jak dlouho musí stěrka schnout?', 'Záleží na tloušťce a podmínkách. Než položíme podlahu, vlhkost vždy změříme.'),
+      ('Musím vyrovnávat podklad vždy?', 'Ne vždy. Při zaměření změříme rovinnost a řekneme, jestli je stěrka potřeba.'),
+      COMMON_FAQ_TERMIN, COMMON_FAQ_ZARUKA]),
+ 'dvere': dict(
+    slug='interierove-dvere-praha', design='Interierove-dvere', crumb='Interiérové dveře Praha', form='Potřebuji poradit s technickým řešením', what='interiérové dveře',
+    title='Interiérové dveře Praha – prodej a montáž | AR podlahy',
+    desc='Interiérové dveře a zárubně v Praze a Středočeském kraji: rámové dveře z plného masivu, povrchy Greko a CPL, montáž sladěná s podlahou. Zaměření zdarma do 48 hodin.',
+    service='Prodej a montáž interiérových dveří', minprice=0,
+    h1='Interiérové dveře v Praze – prodej a montáž', sub='Dveře a zárubně sladěné s vaší podlahou, včetně zaměření a montáže.',
+    bullets=['Zaměření zdarma do 48 hodin', 'Dveře a zárubně z katalogu – cena podle modelu', 'Záruka až 12 let na materiál, 24 měsíců na práci'],
+    eyebrow='Co nabízíme', h2='Dveře, které ladí s podlahou',
+    cards=[
+      ('Rámové dveře', 'Rámy i příčky z plného masivu, bez viditelných spojů, s dvoučepovými závěsy. Pevná konstrukce a dlouhá životnost.', 'cena podle katalogu'),
+      ('Povrch Greko', 'Zvýrazněná struktura dřeva a vyšší odolnost proti poškrábání. Nejlepší poměr cena/kvalita.', 'cena podle katalogu'),
+      ('Povrch CPL', 'Laminát 0,2 mm odolný proti nárazům, oděru, teplu a UV záření. Do náročných prostor.', 'cena podle katalogu'),
+      ('Zárubně a montáž', 'Obložkové i ocelové zárubně, zaměření a montáž vlastním týmem.', IND),
+    ],
+    calc=None, refs=False, note='Ceny dveří a zárubní podle aktuálního katalogu, montáž naceníme po zaměření. Ceny jsou bez DPH.',
+    faq=[
+      ('Kolik stojí interiérové dveře s montáží?', 'Cena záleží na modelu, povrchu a typu zárubně. Katalog vám ukážeme v showroomu nebo přivezeme na zaměření a připravíme nabídku včetně montáže.'),
+      ('Jaký povrch zvolit?', 'Greko má nejlepší poměr cena/kvalita a věrnou strukturu dřeva. CPL laminát je nejodolnější – vhodný do chodeb, dětských pokojů a kanceláří.'),
+      ('Sladíte dveře s podlahou?', 'Ano, dveře a podlahu vybíráme společně, aby k sobě ladily odstínem i strukturou.'),
+      ('Můžu si dveře prohlédnout?', 'Ano, v showroomu v Praze-Radotíně. Nebo vám katalog a vzorky přivezeme na zaměření.'),
+      COMMON_FAQ_TERMIN, COMMON_FAQ_ZARUKA]),
+ 'vchodove': dict(
+    slug='vchodove-dvere-praha', design='Vchodove-dvere', crumb='Vchodové dveře Praha', form='Potřebuji poradit s technickým řešením', what='vchodové dveře',
+    title='Vchodové dveře Praha – prodej a montáž | AR podlahy',
+    desc='Vchodové dveře do bytů a rodinných domů v Praze a Středočeském kraji – zaměření, dodání a montáž. Zaměření zdarma do 48 hodin.',
+    service='Prodej a montáž vchodových dveří', minprice=0,
+    h1='Vchodové dveře v Praze – prodej a montáž', sub='Bezpečné a tepelně izolační dveře do bytu i rodinného domu.',
+    bullets=['Zaměření zdarma do 48 hodin', 'Cena podle modelu a vybavení', 'Záruka až 12 let na materiál, 24 měsíců na práci'],
+    eyebrow='Co nabízíme', h2='Dveře, které chrání váš domov',
+    cards=[
+      ('Bytové vchodové dveře', 'Bezpečnostní dveře do bytů s lepší zvukovou izolací. [DOPLNIT: třídy bezpečnosti, výrobce/řady]', IND),
+      ('Dveře do rodinného domu', 'Tepelně izolační vchodové dveře s kvalitním kováním. [DOPLNIT: materiály, izolační parametry]', IND),
+      ('Zárubně a demontáž', 'Výměna starých dveří včetně zárubně a odvozu, s co nejmenším zásahem do zdi.', IND),
+      ('Montáž', 'Zaměření a montáž vlastním týmem, včetně seřízení a dotěsnění.', IND),
+    ],
+    calc=None, refs=False, note='Cenu připravíme po zaměření podle modelu, rozměru a vybavení. Ceny jsou bez DPH.',
+    faq=[
+      ('Kolik stojí vchodové dveře s montáží?', 'Cena záleží na typu, bezpečnostní třídě, rozměru a vybavení. Nabídku připravíme po bezplatném zaměření.'),
+      ('Vyměníte i zárubeň?', 'Ano, pokud je to potřeba. Starou zárubeň vybouráme a osadíme novou, nebo dveře přizpůsobíme stávající.'),
+      ('Jak dlouho trvá výměna dveří?', 'Samotná montáž obvykle zabere jeden den. Dodací lhůtu dveří upřesníme v nabídce.'),
+      ('Můžu si dveře prohlédnout?', 'Ano, katalog vám ukážeme v showroomu v Praze-Radotíně nebo ho přivezeme na zaměření.'),
+      COMMON_FAQ_TERMIN, COMMON_FAQ_ZARUKA]),
+ 'rekonstrukce': dict(
+    slug='rekonstrukce-praha', design='Rekonstrukce', crumb='Rekonstrukce a stavby na klíč', form='Potřebuji poradit s technickým řešením', what='rekonstrukci',
+    title='Rekonstrukce a stavby na klíč Praha | AR podlahy',
+    desc='Rekonstrukce bytů, domů a interiérů na klíč v Praze a Středočeském kraji. Generální dodavatel s 35 lety praxe – podlahy, dveře, koupelny i přidružená řemesla.',
+    service='Rekonstrukce a stavby na klíč', minprice=0,
+    h1='Rekonstrukce a stavby na klíč v Praze', sub='Byty, domy, kanceláře i veřejné prostory – jako generální dodavatel vše koordinujeme za vás.',
+    bullets=['Prohlídka a konzultace zdarma', 'Jeden dodavatel pro celou rekonstrukci', 'Záruka až 12 let na materiál, 24 měsíců na práci'],
+    eyebrow='Co děláme', h2='Celá rekonstrukce pod jednou střechou',
+    cards=[
+      ('Rekonstrukce bytů', 'Kompletní rekonstrukce od bourání po finální povrchy. Podlahy, dveře, koupelny a přidružená řemesla.', IND),
+      ('Rodinné domy', 'Rekonstrukce i stavby na klíč s koordinací všech řemesel a harmonogramem.', IND),
+      ('Kanceláře a veřejné prostory', 'Interiéry kanceláří, obchodů a veřejných budov. Zkušenost z objektů jako Úřad vlády nebo ministerstva.', IND),
+      ('Okna a koupelny', 'Výměna oken a rekonstrukce koupelen jako součást většího projektu.', IND),
+    ],
+    calc=None, refs=True, note='Rekonstrukce naceníme individuálně po prohlídce a konzultaci. Ceny jsou bez DPH.',
+    faq=[
+      ('Kolik stojí rekonstrukce bytu?', 'Cena záleží na rozsahu, stavu a zvolených materiálech. Po prohlídce připravíme rozpočet po jednotlivých položkách.'),
+      ('Zajistíte i řemesla, která nejsou podlahy?', 'Ano. Jako generální dodavatel koordinujeme všechna řemesla – od bourání přes instalace až po finální povrchy.'),
+      ('Jak dlouho rekonstrukce trvá?', 'Záleží na rozsahu. Harmonogram dostanete spolu s rozpočtem a budeme se ho držet.'),
+      ('Kde pracujete?', 'V celé Praze a ve Středočeském kraji. Základnu máme v Praze-Radotíně.'),
+      ('[DOPLNIT] Jaké řemeslníky máte vlastní a co zajišťujete subdodavatelsky?', '[DOPLNIT – klient]'),
+      COMMON_FAQ_ZARUKA]),
+}
+for k, v in MORE.items():
+    CONF[k] = v
+MORE_ORDER = list(MORE)
