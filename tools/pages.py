@@ -283,7 +283,7 @@ def page(kind, src, target):
         {"@type": "BreadcrumbList", "@id": url + "#drobecky", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Úvod", "item": BASE + "/"},
             {"@type": "ListItem", "position": 2, "name": crumb, "item": url}]},
-        {"@type": "HomeAndConstructionBusiness", "@id": BASE + "/#firma", "name": "AR podlahy", "url": BASE + "/",
+        {"@type": "HomeAndConstructionBusiness", "@id": BASE + "/#firma", "name": "AR podlahy", "url": BASE + "/", "description": "Pokládka a renovace dřevěných podlah, parket, vinylu, PVC a koberců v Praze a Středočeském kraji od roku 1991.", "hasMap": "https://www.google.com/maps?cid=7053343600020491698", "sameAs": ["https://www.facebook.com/Podlahy-Praha-349586465068872/", "https://www.google.com/maps?cid=7053343600020491698"], "areaServed": [{"@type": "City", "name": "Praha"}, {"@type": "AdministrativeArea", "name": "Středočeský kraj"}],
          "telephone": "+420605257236", "email": "info@ar-podlahy.cz", "foundingDate": "1991", "taxID": "12584878",
          "address": {"@type": "PostalAddress", "streetAddress": "Karlická 834/10", "addressLocality": "Praha 16 – Radotín", "postalCode": "153 00", "addressCountry": "CZ"},
          "openingHoursSpecification": [
