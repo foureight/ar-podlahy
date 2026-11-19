@@ -8,16 +8,6 @@ zerops:
       base: static
       routing:
         redirects:
-          - from: https://ar-podlahy.cz/*
-            to: https://www.ar-podlahy.cz/
-            status: 301
-            preservePath: true
-            preserveQuery: true
-          - from: https://redesign.ar-podlahy.cz/*
-            to: https://www.ar-podlahy.cz/
-            status: 301
-            preservePath: true
-            preserveQuery: true
           - from: /blog-o-podlahach/
             to: /
             status: 301
