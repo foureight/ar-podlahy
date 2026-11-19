@@ -749,8 +749,8 @@ F.addEventListener('submit',function(e){e.preventDefault();var KV=F.querySelecto
 o._subject='Poptávka z webu – '+(o.typ||'podlaha')+(o.plocha?' ('+o.plocha+')':'');o._template='table';o._captcha='false';o.stranka=location.href;
 var B=F.querySelector('button[type=submit]');B.disabled=true;S.textContent='Odesílám…';
 fetch('https://formsubmit.co/ajax/poptavka@ar-podlahy.cz',{method:'POST',body:JSON.stringify(o),headers:{'Content-Type':'application/json','Accept':'application/json'}})
-.then(function(r){return r.json()}).then(function(j){if(String(j.success)!=='true')throw 0;F.reset();S.textContent='Děkujeme, poptávka je odeslaná. Ozveme se do 48 hodin.'})
-.catch(function(){S.textContent='Odeslání se nepovedlo, zavolejte nám prosím na +420 605 257 236 nebo napište na poptavka@ar-podlahy.cz.'}).then(function(){B.disabled=false})});})();
+.then(function(r){return r.json()}).then(function(j){if(String(j.success)!=='true')throw 0;F.reset();S.textContent='Děkujeme, ozveme se do 48 hodin.';if(B){B.dataset.t=B.dataset.t||B.textContent;B.dataset.bg=B.dataset.bg||B.style.background;B.textContent='✓ Zpráva odeslána';B.style.background='#3f7d4a';B.dataset.ok='1';F.addEventListener('input',function rs(){B.textContent=B.dataset.t;B.style.background=B.dataset.bg;B.dataset.ok='';B.disabled=false;F.removeEventListener('input',rs)})}})
+.catch(function(){S.textContent='Odeslání se nepovedlo, zavolejte nám prosím na +420 605 257 236 nebo napište na poptavka@ar-podlahy.cz.'}).then(function(){if(!B.dataset.ok)B.disabled=false})});})();
 </script>
 </div>
 </section>
