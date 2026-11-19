@@ -298,7 +298,7 @@ input,select,textarea{font:inherit}
 <script>
 (function(){var F=document.getElementById('hp-form');if(!F)return;var S=document.getElementById('hp-stav');var CA=2+Math.floor(Math.random()*8),CB=1+Math.floor(Math.random()*9),CQ=F.querySelector('.cap-q');if(CQ)CQ.textContent=CA+' + '+CB;
 F.addEventListener('submit',function(e){e.preventDefault();var KV=F.querySelector('[name=_kontrola]');if(KV&&parseInt(KV.value,10)!==CA+CB){S.textContent='Výsledek kontroly nesedí, zkuste to prosím znovu.';KV.focus();return}var o={};new FormData(F).forEach(function(v,k){if(k!=='_kontrola')o[k]=v});
-o._subject='Poptávka z webu – '+(o.typ||'podlaha')+(o.plocha?' ('+o.plocha+')':'');o._template='table';o._captcha='false';o.stranka=location.href;
+o._subject='Poptávka z webu – '+(o.typ||'podlaha')+(o.plocha?' ('+o.plocha+')':'');o.stranka=location.href;
 var B=F.querySelector('button[type=submit]');B.disabled=true;S.textContent='Odesílám…';
 fetch('https://api-2f78-3000.prg1.zerops.app/poptavka',{method:'POST',body:JSON.stringify(o),headers:{'Content-Type':'application/json','Accept':'application/json'}})
 .then(function(r){return r.json()}).then(function(j){if(String(j.success)!=='true')throw 0;F.reset();S.textContent='Děkujeme, ozveme se do 48 hodin.';if(B){B.dataset.t=B.dataset.t||B.textContent;B.dataset.bg=B.dataset.bg||B.style.background;B.textContent='✓ Zpráva odeslána';B.style.background='#3f7d4a';B.dataset.ok='1';F.addEventListener('input',function rs(){B.textContent=B.dataset.t;B.style.background=B.dataset.bg;B.dataset.ok='';B.disabled=false;F.removeEventListener('input',rs)})}})
