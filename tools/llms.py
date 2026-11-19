@@ -47,7 +47,7 @@ L += ['', '## Firma', f'- [O nás]({B}/o-nas/): příběh firmy od roku 1990, t�
 '- Jak rychle položíte podlahu? 100 m² do 7 pracovních dní včetně přípravy podkladu.',
 '- Jakou dáváte záruku? Až 12 let na materiál, 24 měsíců na práci.',
 '- Přijedete se zaměřením? Ano, zdarma do 48 hodin a se vzorky.', '']
-open('/home/claude/ar-podlahy/site/llms.txt', 'w', encoding='utf-8').write('\n'.join(L))
+open('/home/claude/ar-podlahy/site/llms.txt', 'w', encoding='utf-8-sig').write('\n'.join(L))
 print('llms ok')
 
 # Strojově čitelný ceník a přehled služeb (pro AI a vyhledávače)
@@ -68,9 +68,31 @@ data = {
   'zaruka': 'až 12 let na materiál, 24 měsíců na práci', 'termin': 'montáž 100 m² do 7 pracovních dní', 'zamereni': 'zdarma do 48 hodin',
   'prorez_procent': 15, 'stěrka_kc_m2_5mm': 250, 'listy_od_kc_bm': 59, 'ceny': 'bez DPH',
   'aktualizovano': datetime.date.today().isoformat(), 'sluzby': svc}
-open('/home/claude/ar-podlahy/site/cenik.json', 'w', encoding='utf-8').write(json.dumps(data, ensure_ascii=False, indent=2))
-s = open('/home/claude/ar-podlahy/site/llms.txt', encoding='utf-8').read()
+open('/home/claude/ar-podlahy/site/cenik.json', 'w', encoding='utf-8').write(json.dumps(data, ensure_ascii=True, indent=2))
+s = open('/home/claude/ar-podlahy/site/llms.txt', encoding='utf-8-sig').read()
 if 'cenik.json' not in s:
     s = s.replace('## Firma', f'## Data\n- [Ceník a služby v JSON]({B}/cenik.json): strojově čitelný přehled cen a služeb\n\n## Firma', 1)
-    open('/home/claude/ar-podlahy/site/llms.txt', 'w', encoding='utf-8').write(s)
+    open('/home/claude/ar-podlahy/site/llms.txt', 'w', encoding='utf-8-sig').write(s)
 print('cenik ok')
+
+# sitemap.xml (s čitelným zobrazením v prohlížeči přes XSL) + robots.txt
+import os
+site = '/home/claude/ar-podlahy/site'
+paths = ['/'] + sorted('/' + d + '/' for d in os.listdir(site) if os.path.isfile(os.path.join(site, d, 'index.html')))
+today = datetime.date.today().isoformat()
+open(site + '/sitemap.xml', 'w', encoding='utf-8').write('<?xml version="1.0" encoding="UTF-8"?>\n<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{B}{p}</loc><lastmod>{today}</lastmod></url>\n' for p in paths) + '</urlset>\n')
+open(site + '/sitemap.xsl', 'w', encoding='utf-8').write('''<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:s="http://www.sitemaps.org/schemas/sitemap/0.9">
+<xsl:output method="html" encoding="UTF-8" indent="yes"/>
+<xsl:template match="/">
+<html lang="cs"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="robots" content="noindex"/><title>Mapa webu – AR podlahy</title>
+<style>body{font-family:system-ui,sans-serif;background:#f5f1ea;color:#1a1a1a;margin:0;padding:32px 16px}main{max-width:900px;margin:0 auto}h1{margin:0 0 6px;font-size:28px}p{color:#5b554c;margin:0 0 20px}table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e4ddd2;border-radius:10px;overflow:hidden}th,td{text-align:left;padding:10px 14px;border-bottom:1px solid #ece6dc;font-size:14px}th{background:#1a1a1a;color:#fff}a{color:#8a6a3f}</style></head>
+<body><main><h1>Mapa webu AR podlahy</h1><p>Seznam stránek pro vyhledávače (<xsl:value-of select="count(s:urlset/s:url)"/> stránek).</p>
+<table><tr><th>Stránka</th><th>Aktualizováno</th></tr>
+<xsl:for-each select="s:urlset/s:url"><tr><td><a href="{s:loc}"><xsl:value-of select="s:loc"/></a></td><td><xsl:value-of select="s:lastmod"/></td></tr></xsl:for-each>
+</table></main></body></html>
+</xsl:template>
+</xsl:stylesheet>
+''')
+open(site + '/robots.txt', 'w', encoding='utf-8').write(f'User-agent: *\nAllow: /\n\nSitemap: {B}/sitemap.xml\n')
+print('sitemap ok', len(paths))
