@@ -13,20 +13,20 @@ U = {}
 
 U['drevo'] = dict(
     title='Dřevěné podlahy Praha – od 933 Kč/m², pokládka od 249 Kč/m² | AR podlahy',
-    desc='Pokládka masivních a vícevrstvých dřevěných podlah v Praze a Středočeském kraji. Vícevrstvá podlaha od 933 Kč/m², masiv od 1 136 Kč/m², pokládka od 249 Kč/m². Zaměření zdarma do 48 hodin.',
+    desc='Pokládka masivních a vícevrstvých dřevěných podlah v Praze a Středočeském kraji. Vícevrstvá podlaha od 933 Kč/m², masiv od 1 595 Kč/m², pokládka od 249 Kč/m². Zaměření zdarma do 48 hodin.',
     minprice=249,
     h1='Dřevěné podlahy – masiv i vícevrstvé', sub='Masivní a vícevrstvé dřevěné podlahy do bytu, domu i kanceláře, které vydrží generace.',
     bullets=B3('Vícevrstvá od 933 Kč/m², pokládka od 249 Kč/m²'),
     h2='Dřevěná podlaha pro byt, dům i kancelář',
     cards=[
-      ('Masivní dřevěné podlahy', 'Poctivá prkna z masivu, nejčastěji dub. Celoplošně lepená vydrží generace, zvládnou i podlahové topení a dají se opakovaně brousit.', 'materiál od 1 136 · pokládka lepená od 295 Kč/m²'),
+      ('Masivní dřevěné podlahy', 'Poctivá prkna z masivu, nejčastěji dub. Celoplošně lepená vydrží generace, zvládnou i podlahové topení a dají se opakovaně brousit.', 'materiál od 1 595 · pokládka lepená od 295 Kč/m²'),
       ('Vícevrstvé (třívrstvé) podlahy', 'Nášlapná vrstva z ušlechtilého dřeva na stabilním nosiči. Rychlá pokládka, stabilní rozměr a ideální volba na podlahové topení.', 'materiál od 933 · pokládka plovoucí od 249, lepená od 269 Kč/m²'),
       PODKLAD_CARD, LISTY_CARD,
     ],
     calc=[('Vícevrstvá podlaha – plovoucí', 933, 249, 'Dřevěná vícevrstvá podlaha'), ('Vícevrstvá podlaha – lepená', 933, 269, 'Dřevěná vícevrstvá podlaha'),
-          ('Masivní podlaha – lepená', 1136, 295, 'Dřevěná vícevrstvá podlaha')],
+          ('Masivní podlaha – lepená', 1595, 295, 'Dřevěná vícevrstvá podlaha')],
     faq=[
-      ('Kolik stojí dřevěná podlaha?', 'Vícevrstvá dřevěná podlaha začíná od 933 Kč/m², masivní od 1 136 Kč/m². Pokládka vícevrstvé podlahy stojí od 249 Kč/m² (plovoucí) nebo od 269 Kč/m² (lepená), masiv lepíme od 295 Kč/m². Ceny jsou bez DPH, přesnou nabídku dostanete po bezplatném zaměření.'),
+      ('Kolik stojí dřevěná podlaha?', 'Vícevrstvá dřevěná podlaha začíná od 933 Kč/m², masivní od 1 595 Kč/m². Pokládka vícevrstvé podlahy stojí od 249 Kč/m² (plovoucí) nebo od 269 Kč/m² (lepená), masiv lepíme od 295 Kč/m². Ceny jsou bez DPH, přesnou nabídku dostanete po bezplatném zaměření.'),
       ('Masiv, nebo vícevrstvá podlaha?', 'Masiv je jedno poctivé prkno, které lze mnohokrát přebrousit. Vícevrstvá podlaha má nášlapnou vrstvu z ušlechtilého dřeva na stabilním nosiči, méně pracuje a je ideální na podlahové topení. Poradíme podle místnosti a vytápění.'),
       ('Co zahrnuje zaměření zdarma?', 'Přijedeme do 48 hodin, přivezeme vzorky, změříme vlhkost podkladu a skutečné metry. Teprve pak počítáme cenu.'),
       ('Lze dát masivní dřevo na podlahové topení?', 'Ano, když víte jak. V praxi rozhoduje stabilní dřevina a vhodný poměr šíře a tloušťky prkna, změřená vlhkost a vytopený potěr podle protokolu a celoplošné lepení bez vzduchové mezery pro dobrý prostup tepla. Ve vile v Černošicích leží 245 m² masivního dubu na vodním podlahovém topení a funguje bez prasklin.'),
