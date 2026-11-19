@@ -80,7 +80,7 @@ http.createServer((req, res) => {
       send(res, 200, { success: 'true' }, origin);
     } catch (e) {
       console.error('SMTP error:', e && e.message);
-      send(res, 502, { success: 'false', message: 'mail failed' }, origin);
+      send(res, 500, { success: 'false', message: 'mail failed' }, origin);
     }
   });
 }).listen(PORT, () => console.log('API běží na portu ' + PORT));
