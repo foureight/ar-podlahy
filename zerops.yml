@@ -206,6 +206,7 @@ zerops:
               X-Frame-Options: "'SAMEORIGIN' always"
               Referrer-Policy: "'strict-origin-when-cross-origin' always"
               Strict-Transport-Security: '"max-age=31536000" always'
+              Cache-Control: '"no-cache" always'
 
   - setup: api
     build:
