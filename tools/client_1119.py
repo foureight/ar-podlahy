@@ -46,12 +46,12 @@ U['parkety'] = dict(
       ('Oprava a doplnění', 'Výměna poškozených a doplnění chybějících vlysů, oprava míst po příčkách nebo kamnech, aby oprava nebyla vidět.', IND),
       ('Historické vzory', 'Vídeňské a benátské čtverce, kazetové parkety a intarzie. Rozebrání, doplnění a znovusložení původního vzoru.', 'individuálně'),
     ],
-    calc=[('Pokládka parket', 585, 399, 'Parkety'), ('Renovace parket (broušení, tmel, lak/olej)', 0, 600, 'Renovace parket'), ('Historické vzory', None, None, 'Parkety')],
+    calc=[('Pokládka parket', 585, 399, 'Parkety', 95), ('Renovace parket (broušení, tmel, lak/olej)', 0, 600, 'Renovace parket'), ('Historické vzory', None, None, 'Parkety')],
     faq=[
       ('Kolik stojí renovace parket za m²?', 'Renovace – broušení, tmelení spar a nový lak nebo olej – stojí od 600 Kč/m² bez DPH. Doplnění chybějících vlysů a opravy naceníme po zaměření.'),
       ('Vyplatí se staré parkety renovovat?', 'Renovace starých parket se vyplatí. Získáte podlahu jako novou za zlomek ceny masivního dřeva a zároveň si v bytě udržíte poctivý přírodní materiál, který vydrží desítky let. Při zaměření posoudíme stav a uchycení vlysů.'),
       ('Lak, nebo olej?', 'Lak vytvoří odolnou vrstvu a snadno se udržuje – hodí se do bytů s velkým provozem. Olej zachová přirozený vzhled dřeva a dá se opravovat lokálně. Poradíme podle provozu a toho, jak má podlaha vypadat.'),
-      ('Kolik stojí nové parkety?', 'Parkety začínají od 585 Kč/m², pokládka stojí 399–429 Kč/m² podle vzoru. Ceny jsou bez DPH.'),
+      ('Kolik stojí nové parkety?', 'Parkety začínají od 585 Kč/m², pokládka stojí 399–429 Kč/m² podle vzoru a lepidlo 95 Kč/m². Ceny jsou bez DPH.'),
       COMMON_FAQ_TERMIN, COMMON_FAQ_ZARUKA,
     ])
 
@@ -86,9 +86,9 @@ U['pvc'] = dict(
       PODKLAD_CARD,
       ('Lišty a zakončení', 'Soklové lišty a přechodové profily, v koupelnách a kuchyních s vytaženým soklem.', f'od {LISTY} Kč/bm'),
     ],
-    calc=[('PVC v roli – bytové', 330, 150, 'Vinyl'), ('PVC zátěžové', None, 150, 'Vinyl')],
+    calc=[('PVC v roli – bytové (lepené)', 330, 150, 'Vinyl', 95), ('PVC zátěžové (lepené)', None, 150, 'Vinyl', 95)],
     faq=[
-      ('Kolik stojí PVC s pokládkou?', f'PVC v rolích začíná od 330 Kč/m², pokládka od 150 Kč/m². Vyrovnání podkladu stěrkou stojí od {STERKA} Kč/m² při 5 mm a lišty od {LISTY} Kč/bm. Ceny jsou bez DPH.'),
+      ('Kolik stojí PVC s pokládkou?', f'PVC v rolích začíná od 330 Kč/m², pokládka od 150 Kč/m² a lepidlo 95 Kč/m². Vyrovnání podkladu stěrkou stojí od {STERKA} Kč/m² při 5 mm a lišty od {LISTY} Kč/bm. Ceny jsou bez DPH.'),
       ('Jaký je rozdíl mezi PVC a linem?', 'Lidově se „linem“ říká PVC v rolích. Přírodní linoleum je jiný materiál vyrobený z lněného oleje. Poradíme, co se hodí do vašeho prostoru.'),
       ('Lepit, nebo položit volně?', 'Volná pokládka je možná, ale nedoporučujeme ji. PVC lepíme celoplošně – podlaha se nevlní, nehýbe se a vydrží déle.'),
       ('Jak široké role máte?', 'PVC dodáváme v šířích 2, 3 i 4 m, takže většinu místností pokryjeme bez spoje.'),
@@ -106,9 +106,9 @@ U['koberce'] = dict(
       ('Koberce na schody', 'Koberce lepíme na schodiště včetně bočnic, s pevně zakončenými hranami.', IND),
       PODKLAD_CARD,
     ],
-    calc=[('Koberec bytový (metráž)', 154, 228, 'Koberec'), ('Koberec zátěžový / čtverce', None, 228, 'Koberec')],
+    calc=[('Koberec bytový – lepený (metráž)', 154, 228, 'Koberec', 95), ('Koberec zátěžový / čtverce', None, 228, 'Koberec')],
     faq=[
-      ('Kolik stojí koberec s pokládkou?', f'Koberce začínají od 154 Kč/m², pokládka od 228 Kč/m². Vyrovnání podkladu stojí od {STERKA} Kč/m² při 5 mm a lišty od {LISTY} Kč/bm. Ceny jsou bez DPH.'),
+      ('Kolik stojí koberec s pokládkou?', f'Koberce začínají od 154 Kč/m², pokládka od 228 Kč/m². U lepeného koberce se připočítává lepidlo za 95 Kč/m². Vyrovnání podkladu stojí od {STERKA} Kč/m² při 5 mm a lišty od {LISTY} Kč/bm. Ceny jsou bez DPH.'),
       ('Role, nebo čtverce?', 'Metrážový koberec z role je ideální do bytu – je bez spojů a příjemný. Kobercové čtverce se hodí do kanceláří, protože se poškozený kus dá snadno vyměnit.'),
       ('Lepí se koberec, nebo jen pokládá?', 'Koberce lepíme celoplošně disperzním lepidlem, aby se nevlnily a vydržely provoz. Kobercové čtverce fixujeme tekutou fixací.'),
       ('Pokládáte koberce i na schody?', 'Ano, koberce lepíme na schody i bočnice.'),
