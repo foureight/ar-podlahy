@@ -9,196 +9,196 @@ zerops:
       routing:
         redirects:
           - from: /blog-o-podlahach/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /blog-o-podlahach
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /brusky-a-pily/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /brusky-a-pily
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /chci-nabidku/
-            to: /kontakty/
+            to: https://www.ar-podlahy.cz/kontakty/
             status: 301
           - from: /chci-nabidku
-            to: /kontakty/
+            to: https://www.ar-podlahy.cz/kontakty/
             status: 301
           - from: /dvere/
-            to: /interierove-dvere-praha/
+            to: https://www.ar-podlahy.cz/interierove-dvere-praha/
             status: 301
           - from: /dvere
-            to: /interierove-dvere-praha/
+            to: https://www.ar-podlahy.cz/interierove-dvere-praha/
             status: 301
           - from: /excentricka-bruska/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /excentricka-bruska
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /internetovy-obchod2/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /internetovy-obchod2
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /kontakt/
-            to: /kontakty/
+            to: https://www.ar-podlahy.cz/kontakty/
             status: 301
           - from: /kontakt
-            to: /kontakty/
+            to: https://www.ar-podlahy.cz/kontakty/
             status: 301
           - from: /l/jak-vylepsit-teplo-rodinneho-domova-kusove-koberce/
-            to: /koberce-praha/
+            to: https://www.ar-podlahy.cz/koberce-praha/
             status: 301
           - from: /l/jak-vylepsit-teplo-rodinneho-domova-kusove-koberce
-            to: /koberce-praha/
+            to: https://www.ar-podlahy.cz/koberce-praha/
             status: 301
           - from: /l/osmo-dekoracni-vosk-intezivni-odstiny-do-interieru/
-            to: /drevene-podlahy-praha/
+            to: https://www.ar-podlahy.cz/drevene-podlahy-praha/
             status: 301
           - from: /l/osmo-dekoracni-vosk-intezivni-odstiny-do-interieru
-            to: /drevene-podlahy-praha/
+            to: https://www.ar-podlahy.cz/drevene-podlahy-praha/
             status: 301
           - from: /l/otvirame-e-shop-podlahy-a-covid-19/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /l/otvirame-e-shop-podlahy-a-covid-19
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /l/priprava-podkladu-litim-samonivelcni-sterkou-pred-lepenim-vinylovych-dilcu-nebo-pvc-v-rolich/
-            to: /priprava-podkladu-praha/
+            to: https://www.ar-podlahy.cz/priprava-podkladu-praha/
             status: 301
           - from: /l/priprava-podkladu-litim-samonivelcni-sterkou-pred-lepenim-vinylovych-dilcu-nebo-pvc-v-rolich
-            to: /priprava-podkladu-praha/
+            to: https://www.ar-podlahy.cz/priprava-podkladu-praha/
             status: 301
           - from: /l/pvc-novilon-od-vyrobce-forbo-v-siri-200-300-a-400cm/
-            to: /pvc-podlahy-praha/
+            to: https://www.ar-podlahy.cz/pvc-podlahy-praha/
             status: 301
           - from: /l/pvc-novilon-od-vyrobce-forbo-v-siri-200-300-a-400cm
-            to: /pvc-podlahy-praha/
+            to: https://www.ar-podlahy.cz/pvc-podlahy-praha/
             status: 301
           - from: /novy-clanek/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /novy-clanek
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /obchodni-podminky/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /obchodni-podminky
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /obchodni-podminky2/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /obchodni-podminky2
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /p/ceresit-rs-88-25-kg/
-            to: /priprava-podkladu-praha/
+            to: https://www.ar-podlahy.cz/priprava-podkladu-praha/
             status: 301
           - from: /p/ceresit-rs-88-25-kg
-            to: /priprava-podkladu-praha/
+            to: https://www.ar-podlahy.cz/priprava-podkladu-praha/
             status: 301
           - from: /p/experto-lvt-55-dub-mirra-8196l-003/
-            to: /vinylove-podlahy-praha/
+            to: https://www.ar-podlahy.cz/vinylove-podlahy-praha/
             status: 301
           - from: /p/experto-lvt-55-dub-mirra-8196l-003
-            to: /vinylove-podlahy-praha/
+            to: https://www.ar-podlahy.cz/vinylove-podlahy-praha/
             status: 301
           - from: /p/id-inspiration-30-120x28-5-cm-tl-2-mm-lamely/
-            to: /vinylove-podlahy-praha/
+            to: https://www.ar-podlahy.cz/vinylove-podlahy-praha/
             status: 301
           - from: /p/id-inspiration-30-120x28-5-cm-tl-2-mm-lamely
-            to: /vinylove-podlahy-praha/
+            to: https://www.ar-podlahy.cz/vinylove-podlahy-praha/
             status: 301
           - from: /p/id-inspiration-40-120x20-cm-tl-2-2-mm-lamely/
-            to: /vinylove-podlahy-praha/
+            to: https://www.ar-podlahy.cz/vinylove-podlahy-praha/
             status: 301
           - from: /p/id-inspiration-40-120x20-cm-tl-2-2-mm-lamely
-            to: /vinylove-podlahy-praha/
+            to: https://www.ar-podlahy.cz/vinylove-podlahy-praha/
             status: 301
           - from: /podlaharske-stroje/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /podlaharske-stroje
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /podlahy/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /podlahy
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /pravidla-ochrany-soukromi/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /pravidla-ochrany-soukromi
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /pravidla-ochrany-soukromi2/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /pravidla-ochrany-soukromi2
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /primocara-pila-narex/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /primocara-pila-narex
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /projekty/
-            to: /o-nas/
+            to: https://www.ar-podlahy.cz/o-nas/
             status: 301
           - from: /projekty
-            to: /o-nas/
+            to: https://www.ar-podlahy.cz/o-nas/
             status: 301
           - from: /pujcovna-naradi/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /pujcovna-naradi
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /sluzby/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /sluzby
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /valcova-bruska/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /valcova-bruska
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /vinyl/
-            to: /vinylove-podlahy-praha/
+            to: https://www.ar-podlahy.cz/vinylove-podlahy-praha/
             status: 301
           - from: /vinyl
-            to: /vinylove-podlahy-praha/
+            to: https://www.ar-podlahy.cz/vinylove-podlahy-praha/
             status: 301
           - from: /volna-pracovni-mista/
-            to: /o-nas/
+            to: https://www.ar-podlahy.cz/o-nas/
             status: 301
           - from: /volna-pracovni-mista
-            to: /o-nas/
+            to: https://www.ar-podlahy.cz/o-nas/
             status: 301
           - from: /vyhledavani/
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /vyhledavani
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /p/*
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
           - from: /l/*
-            to: /
+            to: https://www.ar-podlahy.cz/
             status: 301
         headers:
           - for: "/*"
