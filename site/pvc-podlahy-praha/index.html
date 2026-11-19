@@ -368,7 +368,8 @@ input,select,textarea{font:inherit}
 <label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 700;">E-mail<input type="email" name="email" autocomplete="email" style="border: 1px solid #d6cdbf; border-radius: 8px; padding: 14px; font-size: 16px;"></label>
 <label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 700;">Lokalita<input type="text" name="lokalita" placeholder="např. Praha 5" style="border: 1px solid #d6cdbf; border-radius: 8px; padding: 14px; font-size: 16px;"></label>
 <label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 700; grid-column: 1 / -1;">Zpráva (nepovinné)<textarea name="zprava" rows="3" style="border: 1px solid #d6cdbf; border-radius: 8px; padding: 14px; font-size: 16px; resize: vertical;"></textarea></label>
-<input type="hidden" name="typ" value="Vinyl"><input type="hidden" name="plocha" value=""><input type="hidden" name="zdroj" value="landing-pvc-podlahy-praha">
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 700; grid-column: 1 / -1;">Kontrola: kolik je <span class="cap-q">3 + 4</span>? *<input type="text" inputmode="numeric" name="_kontrola" required autocomplete="off" style="border: 1px solid #d6cdbf; border-radius: 8px; padding: 14px; font-size: 16px;"></label>
+<input type="hidden" name="typ" value="Vinyl"><input type="hidden" name="plocha" value=""><input type="hidden" name="zdroj" value="landing-pvc-podlahy-praha"><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none;">
 <button type="submit" style="grid-column: 1 / -1; background: #8a6a3f; color: #fff; border: 0; border-radius: 8px; padding: 17px; font-size: 17px; font-weight: 800; cursor: pointer;">Odeslat – ozveme se do 48 hodin</button>
 <p id="poptavka-stav" role="status" style="grid-column: 1 / -1; margin: 0; font-size: 13px; line-height: 1.5; color: #6b655b;">Odesláním souhlasíte se zpracováním osobních údajů za účelem vyřízení poptávky. <a href="#" style="color: #8a6a3f;">Zásady ochrany osobních údajů</a></p>
 </form>
@@ -459,9 +460,10 @@ var st=s&&s.checked?a*ST:0;g('calc-st-row').style.display=st?'flex':'none';g('ca
 var sum=(ms==='0'?0:q*mat)+a*lab+st;g('calc-total').textContent=sum?(exact?'':'od ')+f(sum):'po zaměření'}
 if(t){[t,m,s].forEach(function(e){if(e){e.addEventListener('input',u);e.addEventListener('change',u)}});u();
 g('calc-cta').addEventListener('click',function(){var F=g('poptavka-form');F.typ.value=t.options[t.selectedIndex].text;F.plocha.value=m.value+' m²'+(s&&s.checked?' + stěrka':'')})}
-var F=g('poptavka-form'),S=g('poptavka-stav'),EP='';
-if(F)F.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(F);
-if(EP){fetch(EP,{method:'POST',body:d,headers:{'Accept':'application/json'}}).then(function(r){if(!r.ok)throw 0;F.reset();S.textContent='Děkujeme, ozveme se do 48 hodin.'}).catch(function(){S.textContent='Odeslání se nepovedlo, zavolejte nám prosím na +420 605 257 236.'});return}
+var F=g('poptavka-form'),S=g('poptavka-stav'),EP='https://formsubmit.co/ajax/poptavka@ar-podlahy.cz';if(F){var CA=2+Math.floor(Math.random()*8),CB=1+Math.floor(Math.random()*9),CQ=F.querySelector('.cap-q');if(CQ)CQ.textContent=CA+' + '+CB;}
+if(F)F.addEventListener('submit',function(e){e.preventDefault();var KV=F.querySelector('[name=_kontrola]');if(KV&&parseInt(KV.value,10)!==CA+CB){S.textContent='Výsledek kontroly nesedí, zkuste to prosím znovu.';KV.focus();return}var d=new FormData(F);d.delete('_kontrola');
+if(EP){var o={};d.forEach(function(v,k){o[k]=v});o._subject='Poptávka z webu – '+(o.typ||'podlaha')+(o.plocha?' ('+o.plocha+')':'');o._template='table';o._captcha='false';o.stranka=location.href;var B=F.querySelector('button[type=submit]');if(B)B.disabled=true;S.textContent='Odesílám…';
+fetch(EP,{method:'POST',body:JSON.stringify(o),headers:{'Content-Type':'application/json','Accept':'application/json'}}).then(function(r){return r.json()}).then(function(j){if(String(j.success)!=='true')throw 0;F.reset();S.textContent='Děkujeme, poptávka je odeslaná. Ozveme se do 48 hodin.'}).catch(function(){S.textContent='Odeslání se nepovedlo, zavolejte nám prosím na +420 605 257 236 nebo napište na poptavka@ar-podlahy.cz.'}).then(function(){if(B)B.disabled=false});return}
 var b=[];d.forEach(function(v,k){if(v)b.push(k+': '+v)});location.href='mailto:poptavka@ar-podlahy.cz?subject='+encodeURIComponent('Poptávka – '+(F.typ.value||'podlaha'))+'&body='+encodeURIComponent(b.join('\n'))});
 })();
 </script>

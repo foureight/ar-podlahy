@@ -327,7 +327,7 @@ def page(kind, src, target):
     out = out.replace('REALIMG/', 'img/real/' if target == 'design' else '/img/real/')
     if target == 'design':
         out = out.replace('<a href="/" aria-label="AR podlahy – úvod"', '<a href="Main.dc.html" aria-label="AR podlahy – úvod"')
-        out = re.sub(r'"\$preview":\{"width":1440,"height":\d+\}', '"$preview":{"width":1440,"height":%d}' % {'onas': 5450, 'kontakty': 3700, 'drevo': 6250, 'parkety': 6050, 'pvc': 5000, 'koberce': 5000, 'vinyl': 4550, 'historicke': 5450, 'laminat': 4500, 'korek': 3750, 'sterky': 3900, 'terasy': 5100, 'podklad': 5050, 'dvere': 3800, 'vchodove': 3750, 'rekonstrukce': 5350}.get(kind, 4550), out)
+        out = re.sub(r'"\$preview":\{"width":1440,"height":\d+\}', '"$preview":{"width":1440,"height":%d}' % {'drevo': 6400, 'historicke': 5600, 'dvere': 3950, 'koberce': 5150, 'kontakty': 3900, 'korek': 3900, 'laminat': 4650, 'sterky': 4050, 'onas': 5650, 'parkety': 6200, 'podklad': 5200, 'pvc': 5150, 'rekonstrukce': 5500, 'terasy': 5250, 'vchodove': 3900, 'vinyl': 4700}.get(kind, 4550), out)
     else:
         if kind in LANDS:
             out = out.replace('</body>', __import__('landing').JS + '\n</body>', 1)
