@@ -190,9 +190,9 @@ def calc_section(c):
 <label style="{LB}">Čistá plocha v m²<input id="calc-m2" type="number" min="1" step="1" value="50" inputmode="numeric" style="{INP}"></label>
 <label style="display: flex; gap: 10px; align-items: center; font-size: 15px; font-weight: 600;"><input id="calc-sterka" type="checkbox" style="width: 20px; height: 20px; accent-color: #8a6a3f;">Vyrovnat podklad stěrkou (od {STERKA} Kč/m², 5 mm)</label>
 <div style="background: #f5f1ea; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px;">
-<div style="{ROW}"><span>Materiál <small id="calc-mat-d" style="color: #6b655b;">(58 m² s prořezem 15 %)</small></span><strong id="calc-mat">{mat}</strong></div>
-<div style="{ROW}"><span>Pokládka <small id="calc-lab-d" style="color: #6b655b;">(50 m²)</small></span><strong id="calc-lab">{lab}</strong></div>
-<div id="calc-st-row" style="{ROW} display: none;"><span>Stěrka <small id="calc-st-d" style="color: #6b655b;"></small></span><strong id="calc-st">–</strong></div>
+<div style="{ROW}"><span>Materiál od <small id="calc-mat-d" style="color: #6b655b;">(58 m² s prořezem 15 %)</small></span><strong id="calc-mat">{mat}</strong></div>
+<div style="{ROW}"><span>Pokládka (práce) od <small id="calc-lab-d" style="color: #6b655b;">(50 m²)</small></span><strong id="calc-lab">{lab}</strong></div>
+<div id="calc-st-row" style="{ROW} display: none;"><span>Stěrka od <small id="calc-st-d" style="color: #6b655b;"></small></span><strong id="calc-st">–</strong></div>
 <div style="{ROW} border-top: 1px solid #e0d6c6; padding-top: 10px; font-size: 18px;"><span style="font-weight: 800;">Celkem orientačně</span><strong id="calc-total" style="font-size: 22px; font-weight: 900;">{tot_s}</strong></div>
 <small style="color: #6b655b; font-size: 12px;">{NOTE} Lišty (od {LISTY} Kč/bm) a dopravu upřesníme po zaměření.</small>
 </div>
