@@ -161,7 +161,7 @@ def cards_section(c):
 <section style="{WRAP} display: flex; flex-direction: column; gap: 28px;">
 <div style="max-width: 760px; display: flex; flex-direction: column; gap: 12px;"><span style="{EYE}">{c["eyebrow"]}</span><h2 style="{H2}">{c["h2"]}</h2></div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">{cards}</div>
-<p style="margin: 0; font-size: 13px; color: #6b655b;">{c.get('note', NOTE + ' Materiál se počítá včetně prořezu, pokládka z čisté plochy.')}</p>
+<p style="margin: 0; font-size: 13px; color: #6b655b;">{c.get('note', NOTE + ' Materiál se počítá včetně prořezu 15 %, pokládka z čisté plochy.')}</p>
 </section>
 
 '''
@@ -172,7 +172,7 @@ def calc_section(c):
     LB = 'display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 700;'
     ROW = 'display: flex; justify-content: space-between; gap: 12px; font-size: 15px;'
     t, m, l, f = c['calc'][0]
-    q = 54
+    q = 58
     mat = f'{q * m:,}'.replace(',', ' ') + ' Kč' if m else ('–' if m == 0 else 'po zaměření')
     lab = f'{50 * l:,}'.replace(',', ' ') + ' Kč' if l else 'po zaměření'
     tot = (q * (m or 0)) + (50 * (l or 0))
@@ -190,7 +190,7 @@ def calc_section(c):
 <label style="{LB}">Čistá plocha v m²<input id="calc-m2" type="number" min="1" step="1" value="50" inputmode="numeric" style="{INP}"></label>
 <label style="display: flex; gap: 10px; align-items: center; font-size: 15px; font-weight: 600;"><input id="calc-sterka" type="checkbox" style="width: 20px; height: 20px; accent-color: #8a6a3f;">Vyrovnat podklad stěrkou (od {STERKA} Kč/m², 5 mm)</label>
 <div style="background: #f5f1ea; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px;">
-<div style="{ROW}"><span>Materiál <small id="calc-mat-d" style="color: #6b655b;">(54 m² s prořezem 8 %)</small></span><strong id="calc-mat">{mat}</strong></div>
+<div style="{ROW}"><span>Materiál <small id="calc-mat-d" style="color: #6b655b;">(58 m² s prořezem 15 %)</small></span><strong id="calc-mat">{mat}</strong></div>
 <div style="{ROW}"><span>Pokládka <small id="calc-lab-d" style="color: #6b655b;">(50 m²)</small></span><strong id="calc-lab">{lab}</strong></div>
 <div id="calc-st-row" style="{ROW} display: none;"><span>Stěrka <small id="calc-st-d" style="color: #6b655b;"></small></span><strong id="calc-st">–</strong></div>
 <div style="{ROW} border-top: 1px solid #e0d6c6; padding-top: 10px; font-size: 18px;"><span style="font-weight: 800;">Celkem orientačně</span><strong id="calc-total" style="font-size: 22px; font-weight: 900;">{tot_s}</strong></div>
@@ -284,8 +284,8 @@ JS = """<script>
 var t=document.getElementById('calc-typ'),m=document.getElementById('calc-m2'),s=document.getElementById('calc-sterka'),ST=%d;
 function f(n){return Math.round(n).toLocaleString('cs-CZ')+' Kč'}
 function g(id){return document.getElementById(id)}
-function u(){if(!t)return;var o=t.options[t.selectedIndex],a=Math.max(0,parseFloat(m.value)||0),ms=o.getAttribute('data-mat'),ls=o.getAttribute('data-lab'),mat=+ms||0,lab=+ls||0,q=Math.ceil(a*1.08),exact=true;
-if(ms==='0'){g('calc-mat').textContent='–';g('calc-mat-d').textContent='(bez materiálu)'}else if(mat){g('calc-mat').textContent=f(q*mat);g('calc-mat-d').textContent='('+q+' m² s prořezem 8 %%)'}else{g('calc-mat').textContent='po zaměření';g('calc-mat-d').textContent='';exact=false}
+function u(){if(!t)return;var o=t.options[t.selectedIndex],a=Math.max(0,parseFloat(m.value)||0),ms=o.getAttribute('data-mat'),ls=o.getAttribute('data-lab'),mat=+ms||0,lab=+ls||0,q=Math.ceil(a*1.15),exact=true;
+if(ms==='0'){g('calc-mat').textContent='–';g('calc-mat-d').textContent='(bez materiálu)'}else if(mat){g('calc-mat').textContent=f(q*mat);g('calc-mat-d').textContent='('+q+' m² s prořezem 15 %%)'}else{g('calc-mat').textContent='po zaměření';g('calc-mat-d').textContent='';exact=false}
 g('calc-lab-d').textContent='('+a+' m²)';if(lab){g('calc-lab').textContent=f(a*lab)}else{g('calc-lab').textContent='po zaměření';exact=false}
 var st=s&&s.checked?a*ST:0;g('calc-st-row').style.display=st?'flex':'none';g('calc-st').textContent=f(st);g('calc-st-d').textContent='('+a+' m²)';
 var sum=(ms==='0'?0:q*mat)+a*lab+st;g('calc-total').textContent=sum?(exact?'':'od ')+f(sum):'po zaměření'}

@@ -103,7 +103,7 @@ MORE = {
       ('Podkladní konstrukce', 'Rošt, terče a odvodnění – správná konstrukce rozhoduje o životnosti terasy.', IND),
     ],
     calc=[('Terasa (WPC / exotika / jehličnany)', 399, None, 'Potřebuji poradit s technickým řešením')], refs=False,
-    note='Ceny jsou bez DPH. Materiál se počítá včetně prořezu, montáž a konstrukci naceníme po zaměření.',
+    note='Ceny jsou bez DPH. Materiál se počítá včetně prořezu 15 %, montáž a konstrukci naceníme po zaměření.',
     faq=[
       ('Kolik stojí terasa?', 'Materiál začíná od 399 Kč/m². Cenu montáže a podkladní konstrukce připravíme po zaměření – záleží na podkladu, výšce a tvaru terasy. Ceny jsou bez DPH.'),
       ('WPC, nebo dřevo?', 'WPC je téměř bezúdržbové. Dřevo je přírodní a krásně stárne, ale potřebuje pravidelné ošetření olejem. Poradíme podle vašich představ.'),

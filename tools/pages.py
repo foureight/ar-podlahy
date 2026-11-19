@@ -208,11 +208,11 @@ def calc_section():
 <form id="calc" onsubmit="return false" style="background: #fff; color: #1a1a1a; border-radius: 18px; padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; gap: 18px;">
 <label style="{LB}">Druh podlahy<select id="calc-typ" style="{INP}">{opts}</select></label>
 <label style="{LB}">Plocha v m²<input id="calc-m2" type="number" min="1" step="1" value="50" inputmode="numeric" style="{INP}"></label>
-<label style="display: flex; gap: 10px; align-items: center; font-size: 15px; font-weight: 600;"><input id="calc-prorez" type="checkbox" checked style="width: 20px; height: 20px; accent-color: #8a6a3f;">Připočítat prořez 8 %</label>
+<label style="display: flex; gap: 10px; align-items: center; font-size: 15px; font-weight: 600;"><input id="calc-prorez" type="checkbox" checked style="width: 20px; height: 20px; accent-color: #8a6a3f;">Připočítat prořez 15 %</label>
 <div style="background: #f5f1ea; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 6px;">
 <span style="font-size: 14px; color: #6b655b;">Materiál orientačně od</span>
 <strong id="calc-vysledek" style="font-size: clamp(32px, 3.4vw, 44px); font-weight: 900; line-height: 1.1; color: #1a1a1a;">30 726 Kč</strong>
-<span id="calc-detail" style="font-size: 13px; color: #6b655b;">54 m² × 569 Kč/m² · bez pokládky a přípravy podkladu</span>
+<span id="calc-detail" style="font-size: 13px; color: #6b655b;">58 m² × 585 Kč/m² · bez pokládky a přípravy podkladu</span>
 </div>
 <a id="calc-cta" href="#poptavka" style="background: #8a6a3f; color: #fff; text-align: center; text-decoration: none; padding: 17px; border-radius: 8px; font-weight: 800; font-size: 16px;">Chci přesnou nabídku včetně pokládky</a>
 <span style="font-size: 12px; color: #8a8378; line-height: 1.5;">Orientační výpočet z ceníku materiálu „od“. Konečná cena závisí na konkrétním výrobku, stavu podkladu a rozsahu prací.</span>
@@ -224,7 +224,7 @@ def calc_section():
 CALC_JS = """<script>
 (function(){var t=document.getElementById('calc-typ'),m=document.getElementById('calc-m2'),p=document.getElementById('calc-prorez'),r=document.getElementById('calc-vysledek'),d=document.getElementById('calc-detail'),c=document.getElementById('calc-cta');if(!t)return;
 function f(n){return Math.round(n).toLocaleString('cs-CZ')}
-function u(){var a=Math.max(0,parseFloat(m.value)||0),k=p.checked?1.08:1,cena=+t.value,q=Math.ceil(a*k);r.textContent=f(q*cena)+' Kč';d.textContent=q+' m² × '+cena+' Kč/m² · bez pokládky a přípravy podkladu'}
+function u(){var a=Math.max(0,parseFloat(m.value)||0),k=p.checked?1.15:1,cena=+t.value,q=Math.ceil(a*k);r.textContent=f(q*cena)+' Kč';d.textContent=q+' m² × '+cena+' Kč/m² · bez pokládky a přípravy podkladu'}
 [t,m,p].forEach(function(e){e.addEventListener('input',u);e.addEventListener('change',u)});u();
 c.addEventListener('click',function(){var pl=document.querySelector('#poptavka input[name=plocha]'),ty=document.querySelector('#poptavka select[name=typ]');if(pl)pl.value=m.value;if(ty){var want=t.options[t.selectedIndex].getAttribute('data-form');for(var i=0;i<ty.options.length;i++){if(ty.options[i].text===want){ty.selectedIndex=i;break}}}});})();
 </script>"""
