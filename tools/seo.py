@@ -12,6 +12,22 @@ NEW = [
  ('Jaké podlahy pokládáte?', 'Dřevěné podlahy (masiv i vícevrstvé), parkety, historické podlahy, vinyl, PVC a lino, koberce, laminát, korek, lité epoxidové stěrky a terasy. Děláme i přípravu podkladu a montáž interiérových a vchodových dveří.'),
  ('Kde pracujete?', 'V celé Praze a ve Středočeském kraji. Vzorkovna je na adrese Karlická 834/10, 153 00 Praha 16 – Radotín.'),
 ]
+
+CATALOG = [("Dřevěné podlahy (vícevrstvé a masiv)",933,"/drevene-podlahy-praha/"),("Parkety",585,"/parkety-praha/"),("Renovace a broušení parket",600,"/parkety-praha/"),
+ ("Historické podlahy",None,"/historicke-podlahy-praha/"),("Vinylové podlahy",410,"/vinylove-podlahy-praha/"),("PVC a lino",330,"/pvc-podlahy-praha/"),
+ ("Koberce",154,"/koberce-praha/"),("Laminátové podlahy",499,"/laminatove-podlahy-praha/"),("Korkové podlahy",None,"/korkove-podlahy-praha/"),
+ ("Lité epoxidové stěrky",900,"/lite-epoxidove-sterky-praha/"),("Terasy – montáž",850,"/terasy-praha/"),("Příprava podkladu a stěrky",25,"/priprava-podkladu-praha/"),
+ ("Interiérové dveře",3940,"/interierove-dvere-praha/"),("Vchodové dveře",39550,"/vchodove-dvere-praha/"),("Rekonstrukce a stavby na klíč",None,"/rekonstrukce-praha/")]
+def catalog():
+    items=[]
+    for name,price,path in CATALOG:
+        o={"@type":"Offer","itemOffered":{"@type":"Service","name":name,"url":"https://www.ar-podlahy.cz"+path}}
+        if price:
+            unit = "ks" if "dveře" in name else "m²"
+            o["priceSpecification"]={"@type":"UnitPriceSpecification","minPrice":price,"priceCurrency":"CZK","unitText":unit,"valueAddedTaxIncluded":False}
+        items.append(o)
+    return {"@type":"OfferCatalog","name":"Podlahy, dveře a rekonstrukce","itemListElement":items}
+
 # viditelné FAQ
 for q, a in ANS.items():
     s = re.sub(r'(%s<span class="plus".*?</summary>\s*<p[^>]*>)[^<]*' % re.escape(q), lambda m: m.group(1) + a, s, flags=re.S)
@@ -33,6 +49,7 @@ if static:
         if n['@type'] == 'HomeAndConstructionBusiness':
             n['description'] = 'Pokládka a renovace dřevěných podlah, parket, vinylu, PVC a koberců v Praze a Středočeském kraji od roku 1990. Zaměření zdarma do 48 hodin, montáž 100 m² do 7 pracovních dní, záruka až 12 let na materiál a 24 měsíců na práci. Reference: Úřad vlády, Kramářova vila, Pražský hrad.'
             n['hasMap'] = MAPS
+            n['hasOfferCatalog'] = catalog()
             n.update({'vatID': 'CZ5906111046', 'priceRange': '$$', 'currenciesAccepted': 'CZK', 'image': 'https://www.ar-podlahy.cz/img/po-parkety.jpg', 'logo': 'https://www.ar-podlahy.cz/favicon.ico', 'founder': {'@type': 'Person', 'name': 'Aleš Sebastianides'}, 'numberOfEmployees': {'@type': 'QuantitativeValue', 'value': 13}, 'foundingDate': '1990'})
             n['sameAs'] = sorted(set(n.get('sameAs', []) + [MAPS]))
         if n['@type'] == 'FAQPage':
