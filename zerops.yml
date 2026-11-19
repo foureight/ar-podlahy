@@ -14,3 +14,20 @@ zerops:
               X-Frame-Options: "'SAMEORIGIN' always"
               Referrer-Policy: "'strict-origin-when-cross-origin' always"
               Strict-Transport-Security: '"max-age=31536000" always'
+
+  - setup: api
+    build:
+      base: nodejs@22
+      buildCommands:
+        - cd api && npm install --omit=dev
+      deployFiles:
+        - api/~
+    run:
+      base: nodejs@22
+      ports:
+        - port: 3000
+          httpSupport: true
+      envVariables:
+        MAIL_TO: poptavka@ar-podlahy.cz
+        ALLOWED_ORIGINS: https://redesign.ar-podlahy.cz,https://ar-podlahy.cz,https://www.ar-podlahy.cz
+      start: node server.js

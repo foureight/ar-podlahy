@@ -21,3 +21,9 @@ jobs:
         with:
           access-token: ${{ secrets.ZEROPS_TOKEN }}
           service-id: ywkPXF09TBmBV8pRlsTh3A
+      - name: Deploy API (odesílání poptávek)
+        if: ${{ vars.ZEROPS_API_SERVICE_ID != '' }}
+        uses: zeropsio/actions@v1.0.2
+        with:
+          access-token: ${{ secrets.ZEROPS_TOKEN }}
+          service-id: ${{ vars.ZEROPS_API_SERVICE_ID }}

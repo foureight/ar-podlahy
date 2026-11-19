@@ -1,0 +1,10 @@
+{
+  "name": "ar-podlahy-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Odesílání poptávek z webu AR podlahy přes SMTP",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=20" },
+  "dependencies": { "nodemailer": "6.9.16" }
+}
