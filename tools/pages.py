@@ -4,6 +4,16 @@ DESIGN = SP + '/web/project'
 STATIC = '/home/claude/ar-podlahy/site'
 BASE = 'https://www.ar-podlahy.cz'
 
+def _offers(r):
+    r = tuple(r) + (0,) * (5 - len(r))
+    t, m, l, f, g = r
+    ps = lambda name, price: {"@type": "Offer", "name": f"{t} – {name}", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": price, "priceCurrency": "CZK", "unitCode": "MTK", "unitText": "m²", "valueAddedTaxIncluded": False}}
+    out = []
+    if m: out.append(ps("materiál", m))
+    if l: out.append(ps("pokládka (práce)", l))
+    if g: out.append(ps("lepidlo", g))
+    return out
+
 def sec(s, name, nxt):
     a = s.index('<!-- %s -->' % name); b = s.index('<!-- %s -->' % nxt, a)
     return s[a:b]
@@ -295,7 +305,7 @@ def page(kind, src, target):
             {"@type": "ListItem", "position": 1, "name": "Úvod", "item": BASE + "/"},
             {"@type": "ListItem", "position": 2, "name": crumb, "item": url}]},
         {"@type": "HomeAndConstructionBusiness", "@id": BASE + "/#firma", "name": "AR podlahy", "url": BASE + "/", "description": "Pokládka a renovace dřevěných podlah, parket, vinylu, PVC a koberců v Praze a Středočeském kraji od roku 1990.", "hasMap": "https://www.google.com/maps?cid=7053343600020491698", "sameAs": ["https://www.facebook.com/Podlahy-Praha-349586465068872/", "https://www.google.com/maps?cid=7053343600020491698"], "areaServed": [{"@type": "City", "name": "Praha"}, {"@type": "AdministrativeArea", "name": "Středočeský kraj"}],
-         "telephone": "+420605257236", "email": "info@ar-podlahy.cz", "foundingDate": "1990", "taxID": "12584878",
+         "telephone": "+420605257236", "email": "info@ar-podlahy.cz", "foundingDate": "1990", "taxID": "12584878", "vatID": "CZ5906111046", "priceRange": "$$", "currenciesAccepted": "CZK", "image": BASE + "/img/po-parkety.jpg", "logo": BASE + "/favicon.ico", "founder": {"@type": "Person", "name": "Aleš Sebastianides"}, "numberOfEmployees": {"@type": "QuantitativeValue", "value": 13},
          "address": {"@type": "PostalAddress", "streetAddress": "Karlická 834/10", "addressLocality": "Praha 16 – Radotín", "postalCode": "153 00", "addressCountry": "CZ"},
          "openingHoursSpecification": [
              {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "10:00", "closes": "17:00"},
@@ -305,7 +315,8 @@ def page(kind, src, target):
         c = __import__('landing').CONF[kind]
         ld["@graph"].append({"@type": "Service", "@id": url + "#sluzba", "name": c['service'], "serviceType": c['service'],
             "provider": {"@id": BASE + "/#firma"}, "areaServed": [{"@type": "City", "name": "Praha"}, {"@type": "AdministrativeArea", "name": "Středočeský kraj"}],
-            **({"offers": {"@type": "Offer", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": c['minprice'], "priceCurrency": "CZK", "unitText": "m²", "valueAddedTaxIncluded": False}}} if c.get('minprice') else {})})
+            **({"offers": {"@type": "Offer", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": c['minprice'], "priceCurrency": "CZK", "unitText": "m²", "valueAddedTaxIncluded": False}}} if c.get('minprice') else {}),
+            **({"hasOfferCatalog": {"@type": "OfferCatalog", "name": c['service'], "itemListElement": [o for r in (c.get('calc') or []) for o in _offers(r)]}} if c.get('calc') else {})})
         ld["@graph"].append({"@type": "FAQPage", "@id": url + "#dotazy", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in c['faq']]})
     head = re.sub(r'<script type="application/ld\+json">.*?</script>', lambda m: '<script type="application/ld+json">\n' + json.dumps(ld, ensure_ascii=False, indent=2) + '\n</script>', head, flags=re.S)
     # body parts

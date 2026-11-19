@@ -1,0 +1,231 @@
+{
+  "firma": "AR podlahy",
+  "web": "https://www.ar-podlahy.cz/",
+  "zalozeno": "1990-05",
+  "telefon": "+420605257236",
+  "email": "info@ar-podlahy.cz",
+  "poptavky": "poptavka@ar-podlahy.cz",
+  "adresa": "Karlická 834/10, 153 00 Praha 16 – Radotín",
+  "ico": "12584878",
+  "dic": "CZ5906111046",
+  "oblast": [
+    "Praha",
+    "Středočeský kraj"
+  ],
+  "oteviraci_doba": {
+    "út": "10–17",
+    "st": "10–19",
+    "čt": "10–19",
+    "pá": "10–12"
+  },
+  "zaruka": "až 12 let na materiál, 24 měsíců na práci",
+  "termin": "montáž 100 m² do 7 pracovních dní",
+  "zamereni": "zdarma do 48 hodin",
+  "prorez_procent": 15,
+  "stěrka_kc_m2_5mm": 250,
+  "listy_od_kc_bm": 59,
+  "ceny": "bez DPH",
+  "aktualizovano": "2026-11-19",
+  "sluzby": [
+    {
+      "sluzba": "Pokládka dřevěných podlah",
+      "url": "https://www.ar-podlahy.cz/drevene-podlahy-praha/",
+      "popis": "Pokládka masivních a vícevrstvých dřevěných podlah v Praze a Středočeském kraji. Vícevrstvá podlaha od 933 Kč/m², masiv od 1 595 Kč/m², pokládka od 249 Kč/m². Zaměření zdarma do 48 hodin.",
+      "cena_od": 249,
+      "kalkulace": [
+        {
+          "polozka": "Vícevrstvá podlaha – plovoucí",
+          "material_od_kc_m2": 933,
+          "pokladka_od_kc_m2": 249
+        },
+        {
+          "polozka": "Vícevrstvá podlaha – lepená",
+          "material_od_kc_m2": 933,
+          "pokladka_od_kc_m2": 269,
+          "lepidlo_kc_m2": 95
+        },
+        {
+          "polozka": "Masivní podlaha – lepená",
+          "material_od_kc_m2": 1595,
+          "pokladka_od_kc_m2": 295,
+          "lepidlo_kc_m2": 95
+        }
+      ],
+      "poznamka": null
+    },
+    {
+      "sluzba": "Pokládka a renovace parket",
+      "url": "https://www.ar-podlahy.cz/parkety-praha/",
+      "popis": "Pokládka, broušení a renovace parket v Praze a Středočeském kraji. Vlysy, rybí kost, mozaika i historické vzory. Parkety od 585 Kč/m², pokládka od 399 Kč/m², renovace od 600 Kč/m².",
+      "cena_od": 399,
+      "kalkulace": [
+        {
+          "polozka": "Pokládka parket",
+          "material_od_kc_m2": 585,
+          "pokladka_od_kc_m2": 399,
+          "lepidlo_kc_m2": 95
+        },
+        {
+          "polozka": "Renovace parket (broušení, tmel, lak/olej)",
+          "pokladka_od_kc_m2": 600
+        },
+        {
+          "polozka": "Historické vzory"
+        }
+      ],
+      "poznamka": null
+    },
+    {
+      "sluzba": "Prodej a pokládka vinylových podlah",
+      "url": "https://www.ar-podlahy.cz/vinylove-podlahy-praha/",
+      "popis": "Lepený i zámkový vinyl v Praze a Středočeském kraji včetně přípravy podkladu. Lepený vinyl od 410 Kč/m², zámkový od 799 Kč/m², pokládka od 180 Kč/m². Zaměření zdarma do 48 hodin.",
+      "cena_od": 410,
+      "kalkulace": [
+        {
+          "polozka": "Vinyl lepený",
+          "material_od_kc_m2": 410,
+          "pokladka_od_kc_m2": 230,
+          "lepidlo_kc_m2": 95
+        },
+        {
+          "polozka": "Vinyl zámkový (plovoucí)",
+          "material_od_kc_m2": 799,
+          "pokladka_od_kc_m2": 180
+        }
+      ],
+      "poznamka": null
+    },
+    {
+      "sluzba": "Prodej a pokládka PVC",
+      "url": "https://www.ar-podlahy.cz/pvc-podlahy-praha/",
+      "popis": "PVC v rolích 2, 3 i 4 m pro byty, kuchyně i zátěžové prostory v Praze a Středočeském kraji. Materiál od 330 Kč/m², pokládka od 150 Kč/m², zaměření zdarma do 48 hodin.",
+      "cena_od": 330,
+      "kalkulace": [
+        {
+          "polozka": "PVC v roli – bytové (lepené)",
+          "material_od_kc_m2": 330,
+          "pokladka_od_kc_m2": 150,
+          "lepidlo_kc_m2": 95
+        },
+        {
+          "polozka": "PVC zátěžové (lepené)",
+          "pokladka_od_kc_m2": 150,
+          "lepidlo_kc_m2": 95
+        }
+      ],
+      "poznamka": null
+    },
+    {
+      "sluzba": "Prodej a pokládka koberců",
+      "url": "https://www.ar-podlahy.cz/koberce-praha/",
+      "popis": "Metrážové a zátěžové koberce v rolích i čtvercích pro byty, kanceláře i schodiště v Praze a Středočeském kraji. Koberce od 154 Kč/m², pokládka od 228 Kč/m².",
+      "cena_od": 154,
+      "kalkulace": [
+        {
+          "polozka": "Koberec bytový – lepený (metráž)",
+          "material_od_kc_m2": 154,
+          "pokladka_od_kc_m2": 228,
+          "lepidlo_kc_m2": 95
+        },
+        {
+          "polozka": "Koberec zátěžový – lepený",
+          "pokladka_od_kc_m2": 228,
+          "lepidlo_kc_m2": 95
+        },
+        {
+          "polozka": "Kobercové čtverce – tekutá fixace",
+          "pokladka_od_kc_m2": 228,
+          "lepidlo_kc_m2": 75
+        }
+      ],
+      "poznamka": null
+    },
+    {
+      "sluzba": "Renovace historických podlah",
+      "url": "https://www.ar-podlahy.cz/historicke-podlahy-praha/",
+      "popis": "Renovace a obnova historických podlah v Praze: vídeňské a benátské čtverce, kazetové parkety a intarzie. Zkušenost z památkových objektů. Zaměření zdarma do 48 hodin.",
+      "cena_od": 600,
+      "kalkulace": null,
+      "poznamka": null
+    },
+    {
+      "sluzba": "Prodej a pokládka laminátových podlah",
+      "url": "https://www.ar-podlahy.cz/laminatove-podlahy-praha/",
+      "popis": "Laminátové plovoucí podlahy v Praze a Středočeském kraji. Od 499 Kč/m² bez DPH, pokládka včetně podložky a lišt, zaměření zdarma do 48 hodin.",
+      "cena_od": 499,
+      "kalkulace": [
+        {
+          "polozka": "Laminátová podlaha",
+          "material_od_kc_m2": 499
+        }
+      ],
+      "poznamka": null
+    },
+    {
+      "sluzba": "Prodej a pokládka korkových podlah",
+      "url": "https://www.ar-podlahy.cz/korkove-podlahy-praha/",
+      "popis": "Korkové podlahy v Praze a Středočeském kraji – teplé, tiché a příjemné na chůzi. Lepený korek i do koupelny a na podlahové topení. Cena na dotaz, zaměření zdarma do 48 hodin.",
+      "cena_od": null,
+      "kalkulace": null,
+      "poznamka": "Korkové podlahy naceníme na dotaz, u materiálu platí minimální prodej. Ceny jsou bez DPH."
+    },
+    {
+      "sluzba": "Lité epoxidové stěrky",
+      "url": "https://www.ar-podlahy.cz/lite-epoxidove-sterky-praha/",
+      "popis": "Lité epoxidové, polyuretanové a dekorativní stěrky v Praze a Středočeském kraji – do bytů, garáží, dílen i hal. Přibližně 900–2 500 Kč/m² bez DPH, zaměření zdarma do 48 hodin.",
+      "cena_od": 900,
+      "kalkulace": null,
+      "poznamka": "Lité stěrky stojí přibližně od 900 do 2 500 Kč/m² podle tloušťky vrstvy, systému a stavu podkladu. Ceny jsou bez DPH."
+    },
+    {
+      "sluzba": "Stavba a pokládka teras",
+      "url": "https://www.ar-podlahy.cz/terasy-praha/",
+      "popis": "Stavba a pokládka teras v Praze a Středočeském kraji: WPC, exotické dřeviny a jehličnany. Montáž včetně podkladní konstrukce od 850 Kč/m² bez materiálu, zaměření zdarma do 48 hodin.",
+      "cena_od": 850,
+      "kalkulace": [
+        {
+          "polozka": "Terasa – montáž vč. podkladní konstrukce",
+          "pokladka_od_kc_m2": 850
+        }
+      ],
+      "poznamka": "Montáž terasy včetně podkladní konstrukce od 850 Kč/m² bez materiálu. Materiál naceníme podle zvoleného typu. Ceny jsou bez DPH."
+    },
+    {
+      "sluzba": "Příprava podkladu a vyrovnání stěrkou",
+      "url": "https://www.ar-podlahy.cz/priprava-podkladu-praha/",
+      "popis": "Příprava podkladu pod podlahy v Praze a Středočeském kraji: demontáž staré podlahy, měření vlhkosti, penetrace od 25 Kč/m², samonivelační stěrka od 250 Kč/m². Zaměření zdarma do 48 hodin.",
+      "cena_od": 250,
+      "kalkulace": [
+        {
+          "polozka": "Vyrovnání podkladu stěrkou (5 mm)",
+          "pokladka_od_kc_m2": 250
+        }
+      ],
+      "poznamka": null
+    },
+    {
+      "sluzba": "Prodej a montáž interiérových dveří",
+      "url": "https://www.ar-podlahy.cz/interierove-dvere-praha/",
+      "popis": "Interiérové dveře a zárubně v Praze a Středočeském kraji: dveře od 3 940 Kč, zárubeň od 3 200 Kč, montáž od 1 600 Kč bez DPH. Dveře sladěné s podlahou, zaměření zdarma do 48 hodin.",
+      "cena_od": 3940,
+      "kalkulace": null,
+      "poznamka": "Dveře od 3 940 Kč, zárubeň od 3 200 Kč, montáž od 1 600 Kč za kus. Ceny jsou bez DPH."
+    },
+    {
+      "sluzba": "Prodej a montáž vchodových dveří",
+      "url": "https://www.ar-podlahy.cz/vchodove-dvere-praha/",
+      "popis": "Vchodové dveře do bytů a rodinných domů v Praze a Středočeském kraji od 39 550 Kč bez DPH – zaměření, dodání a montáž. Zaměření zdarma do 48 hodin.",
+      "cena_od": 39550,
+      "kalkulace": null,
+      "poznamka": "Vchodové dveře od 39 550 Kč, montáž naceníme individuálně po zaměření. Ceny jsou bez DPH."
+    },
+    {
+      "sluzba": "Rekonstrukce a stavby na klíč",
+      "url": "https://www.ar-podlahy.cz/rekonstrukce-praha/",
+      "popis": "Rekonstrukce bytů, domů a interiérů v Praze a Středočeském kraji. Podlahy, dveře, malířské a lakýrnické práce vlastním týmem, koupelny se subdodavatelem a kuchyně ve spolupráci se Siko.",
+      "cena_od": null,
+      "kalkulace": null,
+      "poznamka": "Rekonstrukce naceníme individuálně po prohlídce a konzultaci. Ceny jsou bez DPH."
+    }
+  ]
+}

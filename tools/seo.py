@@ -33,6 +33,7 @@ if static:
         if n['@type'] == 'HomeAndConstructionBusiness':
             n['description'] = 'Pokládka a renovace dřevěných podlah, parket, vinylu, PVC a koberců v Praze a Středočeském kraji od roku 1990. Zaměření zdarma do 48 hodin, montáž 100 m² do 7 pracovních dní, záruka až 12 let na materiál a 24 měsíců na práci. Reference: Úřad vlády, Kramářova vila, Pražský hrad.'
             n['hasMap'] = MAPS
+            n.update({'vatID': 'CZ5906111046', 'priceRange': '$$', 'currenciesAccepted': 'CZK', 'image': 'https://www.ar-podlahy.cz/img/po-parkety.jpg', 'logo': 'https://www.ar-podlahy.cz/favicon.ico', 'founder': {'@type': 'Person', 'name': 'Aleš Sebastianides'}, 'numberOfEmployees': {'@type': 'QuantitativeValue', 'value': 13}, 'foundingDate': '1990'})
             n['sameAs'] = sorted(set(n.get('sameAs', []) + [MAPS]))
         if n['@type'] == 'FAQPage':
             qs = re.findall(r'<summary[^>]*>([^<]*)<span class="plus".*?</summary>\s*<p[^>]*>([^<]*)', s[s.index('<!-- RECENZE + FAQ -->'):s.index('<!-- POPTÁVKA -->')], flags=re.S)

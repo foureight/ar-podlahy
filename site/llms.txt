@@ -52,6 +52,9 @@
 - [Vchodové dveře Praha](https://www.ar-podlahy.cz/vchodove-dvere-praha/): Vchodové dveře do bytů a rodinných domů v Praze a Středočeském kraji od 39 550 Kč bez DPH – zaměření, dodání a montáž. Zaměření zdarma do 48 hodin.
 - [Rekonstrukce a stavby na klíč](https://www.ar-podlahy.cz/rekonstrukce-praha/): Rekonstrukce bytů, domů a interiérů v Praze a Středočeském kraji. Podlahy, dveře, malířské a lakýrnické práce vlastním týmem, koupelny se subdodavatelem a kuchyně ve spolupráci se Siko.
 
+## Data
+- [Ceník a služby v JSON](https://www.ar-podlahy.cz/cenik.json): strojově čitelný přehled cen a služeb
+
 ## Firma
 - [O nás](https://www.ar-podlahy.cz/o-nas/): příběh firmy od roku 1990, tým a reference
 - [Kontakty](https://www.ar-podlahy.cz/kontakty/): telefon, e-mail, vzorkovna a mapa

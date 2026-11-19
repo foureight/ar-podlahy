@@ -49,3 +49,28 @@ L += ['', '## Firma', f'- [O nás]({B}/o-nas/): příběh firmy od roku 1990, t�
 '- Přijedete se zaměřením? Ano, zdarma do 48 hodin a se vzorky.', '']
 open('/home/claude/ar-podlahy/site/llms.txt', 'w', encoding='utf-8').write('\n'.join(L))
 print('llms ok')
+
+# Strojově čitelný ceník a přehled služeb (pro AI a vyhledávače)
+import json, datetime
+svc = []
+for k in pages.LANDS:
+    c = landing.CONF[k]
+    rows = []
+    for r in (c.get('calc') or []):
+        r = tuple(r) + (0,) * (5 - len(r))
+        t, m, l, f, g = r
+        rows.append({k2: v for k2, v in {'polozka': t, 'material_od_kc_m2': m or None, 'pokladka_od_kc_m2': l or None, 'lepidlo_kc_m2': g or None}.items() if v})
+    svc.append({'sluzba': c['service'], 'url': f"{B}/{c['slug']}/", 'popis': c['desc'], 'cena_od': c.get('minprice') or None, 'kalkulace': rows or None, 'poznamka': c.get('note')})
+data = {
+  'firma': 'AR podlahy', 'web': B + '/', 'zalozeno': '1990-05', 'telefon': '+420605257236', 'email': 'info@ar-podlahy.cz', 'poptavky': 'poptavka@ar-podlahy.cz',
+  'adresa': 'Karlická 834/10, 153 00 Praha 16 – Radotín', 'ico': '12584878', 'dic': 'CZ5906111046', 'oblast': ['Praha', 'Středočeský kraj'],
+  'oteviraci_doba': {'út': '10–17', 'st': '10–19', 'čt': '10–19', 'pá': '10–12'},
+  'zaruka': 'až 12 let na materiál, 24 měsíců na práci', 'termin': 'montáž 100 m² do 7 pracovních dní', 'zamereni': 'zdarma do 48 hodin',
+  'prorez_procent': 15, 'stěrka_kc_m2_5mm': 250, 'listy_od_kc_bm': 59, 'ceny': 'bez DPH',
+  'aktualizovano': datetime.date.today().isoformat(), 'sluzby': svc}
+open('/home/claude/ar-podlahy/site/cenik.json', 'w', encoding='utf-8').write(json.dumps(data, ensure_ascii=False, indent=2))
+s = open('/home/claude/ar-podlahy/site/llms.txt', encoding='utf-8').read()
+if 'cenik.json' not in s:
+    s = s.replace('## Firma', f'## Data\n- [Ceník a služby v JSON]({B}/cenik.json): strojově čitelný přehled cen a služeb\n\n## Firma', 1)
+    open('/home/claude/ar-podlahy/site/llms.txt', 'w', encoding='utf-8').write(s)
+print('cenik ok')
