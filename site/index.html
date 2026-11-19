@@ -726,7 +726,7 @@ input,select,textarea{font:inherit}
 <a href="mailto:info@ar-podlahy.cz" style="color: #c9a46a;">info@ar-podlahy.cz</a>
 </div>
 </div>
-<form id="hp-form" action="https://formsubmit.co/poptavka@ar-podlahy.cz" method="post" style="flex: 999 1 520px; background: #fff; color: #1a1a1a; border-radius: 18px; padding: clamp(24px, 3vw, 40px); display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; box-sizing: border-box; min-width: 0;">
+<form id="hp-form" action="https://api-2f78-3000.prg1.zerops.app/poptavka" method="post" style="flex: 999 1 520px; background: #fff; color: #1a1a1a; border-radius: 18px; padding: clamp(24px, 3vw, 40px); display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; box-sizing: border-box; min-width: 0;">
 <label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 700;">Jméno a příjmení<input type="text" name="jmeno" autocomplete="name" required style="border: 1px solid #d6cdbf; border-radius: 8px; padding: 14px; font-size: 16px;"></label>
 <label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 700;">Telefon<input type="tel" name="telefon" autocomplete="tel" required style="border: 1px solid #d6cdbf; border-radius: 8px; padding: 14px; font-size: 16px;"></label>
 <label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 700;">E-mail *<input type="email" name="email" autocomplete="email" required style="border: 1px solid #d6cdbf; border-radius: 8px; padding: 14px; font-size: 16px;"></label>
@@ -748,7 +748,7 @@ input,select,textarea{font:inherit}
 F.addEventListener('submit',function(e){e.preventDefault();var KV=F.querySelector('[name=_kontrola]');if(KV&&parseInt(KV.value,10)!==CA+CB){S.textContent='Výsledek kontroly nesedí, zkuste to prosím znovu.';KV.focus();return}var o={};new FormData(F).forEach(function(v,k){if(k!=='_kontrola')o[k]=v});
 o._subject='Poptávka z webu – '+(o.typ||'podlaha')+(o.plocha?' ('+o.plocha+')':'');o._template='table';o._captcha='false';o.stranka=location.href;
 var B=F.querySelector('button[type=submit]');B.disabled=true;S.textContent='Odesílám…';
-fetch('https://formsubmit.co/ajax/poptavka@ar-podlahy.cz',{method:'POST',body:JSON.stringify(o),headers:{'Content-Type':'application/json','Accept':'application/json'}})
+fetch('https://api-2f78-3000.prg1.zerops.app/poptavka',{method:'POST',body:JSON.stringify(o),headers:{'Content-Type':'application/json','Accept':'application/json'}})
 .then(function(r){return r.json()}).then(function(j){if(String(j.success)!=='true')throw 0;F.reset();S.textContent='Děkujeme, ozveme se do 48 hodin.';if(B){B.dataset.t=B.dataset.t||B.textContent;B.dataset.bg=B.dataset.bg||B.style.background;B.textContent='✓ Zpráva odeslána';B.style.background='#3f7d4a';B.dataset.ok='1';F.addEventListener('input',function rs(){B.textContent=B.dataset.t;B.style.background=B.dataset.bg;B.dataset.ok='';B.disabled=false;F.removeEventListener('input',rs)})}})
 .catch(function(){S.textContent='Odeslání se nepovedlo, zavolejte nám prosím na +420 605 257 236 nebo napište na poptavka@ar-podlahy.cz.'}).then(function(){if(!B.dataset.ok)B.disabled=false})});})();
 </script>

@@ -282,7 +282,7 @@ def form_section(c, kind):
 
 MBAR_CSS = '@media (max-width:700px){.mbar{display:flex !important}body{padding-bottom:72px}}'
 
-FORM_ENDPOINT = 'https://formsubmit.co/ajax/poptavka@ar-podlahy.cz'  # FormSubmit – posílá na poptavka@ar-podlahy.cz
+FORM_ENDPOINT = 'https://api-2f78-3000.prg1.zerops.app/poptavka'  # vlastní API na Zerops (složka api/), SMTP mail.hukot.net
 JS = """<script>
 (function(){
 var t=document.getElementById('calc-typ'),m=document.getElementById('calc-m2'),s=document.getElementById('calc-sterka'),ST=%d;
