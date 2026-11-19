@@ -1,0 +1,23 @@
+# Po každé změně na větvi main nasadí web do Zerops (služba redesign.ar-podlahy.cz).
+# Potřebuje v GitHubu secret ZEROPS_TOKEN (Settings → Secrets and variables → Actions).
+name: Deploy to Zerops
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: zerops-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy with Zerops
+        uses: zeropsio/actions@v1.0.2
+        with:
+          access-token: ${{ secrets.ZEROPS_TOKEN }}
+          service-id: ywkPXF09TBmBV8pRlsTh3A
