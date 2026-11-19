@@ -213,6 +213,12 @@ zerops:
               Referrer-Policy: "'strict-origin-when-cross-origin' always"
               Strict-Transport-Security: '"max-age=31536000" always'
               Cache-Control: '"no-cache" always'
+          - for: "/cenik.json"
+            values:
+              Content-Type: '"application/json; charset=utf-8" always'
+          - for: "/llms.txt"
+            values:
+              Content-Type: '"text/plain; charset=utf-8" always'
 
   - setup: api
     build:
