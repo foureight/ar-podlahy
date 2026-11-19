@@ -9,7 +9,7 @@ cut=m1.rindex('</section>',0,m1.index('</x-dc>'))+10
 merged=m1[:m1.index('<!-- PŘED / PO -->')]+m1[m1.index('<!-- PŘÍPADOVÉ STUDIE -->'):cut]+'\n\n'+m2[m2.index('<!-- GARANCE -->'):]
 merged=merged.replace('</style>','\n'.join(extra)+'\n</style>',1)
 import landing
-H={"drevo": 7400, "historicke": 7550, "dvere": 5500, "koberce": 6800, "kontakty": 5900, "korek": 5350, "laminat": 6350, "sterky": 5650, "onas": 8050, "parkety": 8100, "podklad": 6650, "pvc": 6700, "rekonstrukce": 7350, "terasy": 6750, "vchodove": 5400, "vinyl": 6450}
+H={"drevo": 7400, "historicke": 7550, "dvere": 5500, "koberce": 6800, "kontakty": 5900, "korek": 5350, "laminat": 6350, "sterky": 5650, "onas": 8050, "parkety": 8100, "podklad": 6650, "pvc": 6700, "rekonstrukce": 7350, "terasy": 6750, "vchodove": 5400, "vinyl": 6500}
 JOBS=[("kontakty","Kontakty-mobil.dc.html"),("onas","O-nas-mobil.dc.html")]+[(k,landing.CONF[k]["design"]+"-mobil.dc.html") for k in pages.LANDS]
 REN=[("Kontakty.dc.html","Kontakty-mobil.dc.html"),("O-nas.dc.html","O-nas-mobil.dc.html")]+[(landing.CONF[k]["design"]+".dc.html",landing.CONF[k]["design"]+"-mobil.dc.html") for k in pages.LANDS]
 for kind,name in JOBS:

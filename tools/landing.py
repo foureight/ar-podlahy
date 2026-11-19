@@ -167,15 +167,16 @@ def cards_section(c):
 '''
 
 def calc_section(c):
-    opts = ''.join(f'<option value="{i}" data-mat="{m if m is not None else ""}" data-lab="{l if l is not None else ""}" data-form="{f}">{t}</option>' for i, (t, m, l, f) in enumerate(c['calc']))
+    rows = [tuple(r) + (0,) * (5 - len(r)) for r in c['calc']]
+    opts = ''.join(f'<option value="{i}" data-mat="{m if m is not None else ""}" data-lab="{l if l is not None else ""}" data-lep="{g or ""}" data-form="{f}">{t}</option>' for i, (t, m, l, f, g) in enumerate(rows))
     INP = 'border: 1px solid #d6cdbf; border-radius: 8px; padding: 14px; font-size: 16px; background: #fff; width: 100%; box-sizing: border-box;'
     LB = 'display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 700;'
     ROW = 'display: flex; justify-content: space-between; gap: 12px; font-size: 15px;'
-    t, m, l, f = c['calc'][0]
+    t, m, l, f, lep0 = rows[0]
     q = 58
     mat = f'{q * m:,}'.replace(',', ' ') + ' Kč' if m else ('–' if m == 0 else 'po zaměření')
     lab = f'{50 * l:,}'.replace(',', ' ') + ' Kč' if l else 'po zaměření'
-    tot = (q * (m or 0)) + (50 * (l or 0))
+    tot = (q * (m or 0)) + (50 * (l or 0)) + 50 * (lep0 or 0)
     tot_s = ('od ' + f'{tot:,}'.replace(',', ' ') + ' Kč') if tot else 'po zaměření'
     return f'''<!-- KALKULAČKA -->
 <section id="kalkulacka" style="background: #1a1a1a; color: #fff;">
@@ -192,6 +193,7 @@ def calc_section(c):
 <div style="background: #f5f1ea; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px;">
 <div style="{ROW}"><span>Materiál od <small id="calc-mat-d" style="color: #6b655b;">(58 m² s prořezem 15 %)</small></span><strong id="calc-mat">{mat}</strong></div>
 <div style="{ROW}"><span>Pokládka (práce) od <small id="calc-lab-d" style="color: #6b655b;">(50 m²)</small></span><strong id="calc-lab">{lab}</strong></div>
+<div id="calc-lep-row" style="{ROW} display: {"flex" if lep0 else "none"};"><span>Lepidlo od <small id="calc-lep-d" style="color: #6b655b;">(50 m²)</small></span><strong id="calc-lep">{(f"{50 * lep0:,}".replace(",", " ") + " Kč") if lep0 else "–"}</strong></div>
 <div id="calc-st-row" style="{ROW} display: none;"><span>Stěrka od <small id="calc-st-d" style="color: #6b655b;"></small></span><strong id="calc-st">–</strong></div>
 <div style="{ROW} border-top: 1px solid #e0d6c6; padding-top: 10px; font-size: 18px;"><span style="font-weight: 800;">Celkem orientačně</span><strong id="calc-total" style="font-size: 22px; font-weight: 900;">{tot_s}</strong></div>
 <small style="color: #6b655b; font-size: 12px;">{NOTE} Lišty (od {LISTY} Kč/bm) a dopravu upřesníme po zaměření.</small>
@@ -288,8 +290,8 @@ function g(id){return document.getElementById(id)}
 function u(){if(!t)return;var o=t.options[t.selectedIndex],a=Math.max(0,parseFloat(m.value)||0),ms=o.getAttribute('data-mat'),ls=o.getAttribute('data-lab'),mat=+ms||0,lab=+ls||0,q=Math.ceil(a*1.15),exact=true;
 if(ms==='0'){g('calc-mat').textContent='–';g('calc-mat-d').textContent='(bez materiálu)'}else if(mat){g('calc-mat').textContent=f(q*mat);g('calc-mat-d').textContent='('+q+' m² s prořezem 15 %%)'}else{g('calc-mat').textContent='po zaměření';g('calc-mat-d').textContent='';exact=false}
 g('calc-lab-d').textContent='('+a+' m²)';if(lab){g('calc-lab').textContent=f(a*lab)}else{g('calc-lab').textContent='po zaměření';exact=false}
-var st=s&&s.checked?a*ST:0;g('calc-st-row').style.display=st?'flex':'none';g('calc-st').textContent=f(st);g('calc-st-d').textContent='('+a+' m²)';
-var sum=(ms==='0'?0:q*mat)+a*lab+st;g('calc-total').textContent=sum?'od '+f(sum):'po zaměření'}
+var lp=+o.getAttribute('data-lep')||0,le=a*lp;g('calc-lep-row').style.display=le?'flex':'none';g('calc-lep').textContent=f(le);g('calc-lep-d').textContent='('+a+' m²)';var st=s&&s.checked?a*ST:0;g('calc-st-row').style.display=st?'flex':'none';g('calc-st').textContent=f(st);g('calc-st-d').textContent='('+a+' m²)';
+var sum=(ms==='0'?0:q*mat)+a*lab+le+st;g('calc-total').textContent=sum?'od '+f(sum):'po zaměření'}
 if(t){[t,m,s].forEach(function(e){if(e){e.addEventListener('input',u);e.addEventListener('change',u)}});u();
 g('calc-cta').addEventListener('click',function(){var F=g('poptavka-form');F.typ.value=t.options[t.selectedIndex].text;F.plocha.value=m.value+' m²'+(s&&s.checked?' + stěrka':'')})}
 var F=g('poptavka-form'),S=g('poptavka-stav'),EP='__EP__';if(F){var CA=2+Math.floor(Math.random()*8),CB=1+Math.floor(Math.random()*9),CQ=F.querySelector('.cap-q');if(CQ)CQ.textContent=CA+' + '+CB;}

@@ -34,6 +34,7 @@ L = ['# AR podlahy', '',
 '- Lité epoxidové a polyuretanové stěrky: přibližně 900–2 500 Kč/m²',
 '- Historické podlahy: individuálně',
 '- Penetrace podkladu od 25 Kč/m², samonivelační stěrka (5 mm) od 250 Kč/m², lišty od 59 Kč/bm',
+'- Lepidlo u lepených dřevěných a vinylových podlah: 95 Kč/m²',
 '- Interiérové dveře od 3 940 Kč, zárubeň od 3 200 Kč, montáž od 1 600 Kč',
 '- Vchodové dveře od 39 550 Kč, montáž individuálně', '',
 '## Služby']
