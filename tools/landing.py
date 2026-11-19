@@ -263,7 +263,7 @@ def form_section(c, kind):
 <form id="poptavka-form" method="post" action="" style="flex: 999 1 480px; background: #fff; color: #1a1a1a; border-radius: 18px; padding: clamp(22px, 3vw, 36px); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; box-sizing: border-box; min-width: 0;">
 <label style="{Lb}">Jméno a příjmení *<input type="text" name="jmeno" autocomplete="name" required style="{I}"></label>
 <label style="{Lb}">Telefon *<input type="tel" name="telefon" autocomplete="tel" required style="{I}"></label>
-<label style="{Lb}">E-mail<input type="email" name="email" autocomplete="email" style="{I}"></label>
+<label style="{Lb}">E-mail *<input type="email" name="email" autocomplete="email" required style="{I}"></label>
 <label style="{Lb}">Lokalita<input type="text" name="lokalita" placeholder="např. Praha 5" style="{I}"></label>
 <label style="{Lb} grid-column: 1 / -1;">Zpráva (nepovinné)<textarea name="zprava" rows="3" style="{I} resize: vertical;"></textarea></label>
 <label style="grid-column: 1 / -1; display: flex; flex-direction: row; align-items: center; gap: 14px; font-size: 15px; font-weight: 700; color: #1f1b16;"><span>Kontrola: kolik je <span class="cap-q">3 + 4</span>? *</span><input type="text" inputmode="numeric" maxlength="3" name="_kontrola" required autocomplete="off" aria-label="Výsledek kontroly" style="width: 96px; flex: 0 0 96px; text-align: center; border: 1px solid #d6cdbf; border-radius: 8px; padding: 0 10px; font-size: 18px; font-weight: 700; background: #fff; color: #1f1b16;"></label>
