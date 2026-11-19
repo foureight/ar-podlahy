@@ -27,3 +27,10 @@
 
 ## Poznámka k nástrojům
 Generátory stránek (pages.py, landing.py, landing_more.py, mobile.py, facts.py) jsou zkopírované v repu ve složce `tools/` (cesty v nich vedou do dočasného prostoru staré konverzace – při dalším použití je upravit). Design soubory (.dc.html, canvas.json) jdou stáhnout z design artifactu.
+
+## Stav k 19. 11. 2026 večer
+- **Ostrý web běží na https://www.ar-podlahy.cz** (Zerops služba `web`). DNS v Cloudflare (účet nicneninemozne@gmail.com): `ar-podlahy.cz` CNAME → `27ds0jrma38v7clq5krtq64ebk0.prg1-zerops.zone` (DNS only), `www` CNAME → `ar-podlahy.cz`. MX (mail.hukot.net) beze změny. Staré A záznamy byly 3.125.172.46 a 3.73.27.108 (pro případný návrat).
+- Indexace povolena (robots.txt + sitemap.xml), 301 ze starých adres (`zerops.yml`, routing.redirects). Apex a redesign zatím servírují stejný obsah (canonical vede na www) – doménové přesměrování přes absolutní URL v zerops.yml způsobilo smyčku, proto je vypnuté.
+- Nasazení: GitHub Actions `.github/workflows/deploy.yml` po každém pushi na main (secret `ZEROPS_TOKEN`, variable `ZEROPS_API_SERVICE_ID`).
+- Formuláře → vlastní API `api/` (Zerops služba `api`, https://api-2f78-3000.prg1.zerops.app/poptavka), SMTP mail.hukot.net:587 STARTTLS, odesílá na poptavka@ar-podlahy.cz. Heslo `SMTP_PASS` nastavuje klient v Zerops (env secret služby api).
+- Generátory jsou v `tools/` (aktuální: client_1119.py = ceny a texty od klienta, llms.py, seo.py).
