@@ -198,3 +198,4 @@ MORE = {
 for k, v in MORE.items():
     CONF[k] = v
 MORE_ORDER = list(MORE)
+import client_1119  # doplnění klienta 19. 11. 2026

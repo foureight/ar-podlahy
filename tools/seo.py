@@ -31,14 +31,14 @@ if static:
     ld = json.loads(s[i:j])
     for n in ld['@graph']:
         if n['@type'] == 'HomeAndConstructionBusiness':
-            n['description'] = 'Pokládka a renovace dřevěných podlah, parket, vinylu, PVC a koberců v Praze a Středočeském kraji od roku 1991. Zaměření zdarma do 48 hodin, montáž 100 m² do 7 pracovních dní, záruka až 12 let na materiál a 24 měsíců na práci. Reference: Úřad vlády, Kramářova vila, Pražský hrad.'
+            n['description'] = 'Pokládka a renovace dřevěných podlah, parket, vinylu, PVC a koberců v Praze a Středočeském kraji od roku 1990. Zaměření zdarma do 48 hodin, montáž 100 m² do 7 pracovních dní, záruka až 12 let na materiál a 24 měsíců na práci. Reference: Úřad vlády, Kramářova vila, Pražský hrad.'
             n['hasMap'] = MAPS
             n['sameAs'] = sorted(set(n.get('sameAs', []) + [MAPS]))
         if n['@type'] == 'FAQPage':
             qs = re.findall(r'<summary[^>]*>([^<]*)<span class="plus".*?</summary>\s*<p[^>]*>([^<]*)', s[s.index('<!-- RECENZE + FAQ -->'):s.index('<!-- POPTÁVKA -->')], flags=re.S)
             n['mainEntity'] = [{"@type": "Question", "name": q.strip(), "acceptedAnswer": {"@type": "Answer", "text": a.strip()}} for q, a in qs]
     s = s[:i] + '\n' + json.dumps(ld, ensure_ascii=False, indent=2) + '\n' + s[j:]
-    T = 'Podlahy Praha – pokládka a renovace od 1991 | AR podlahy'
+    T = 'Podlahy Praha – pokládka a renovace od 1990 | AR podlahy'
     D = 'Pokládka dřevěných podlah, parket, vinylu, PVC a koberců v Praze a okolí. Zaměření zdarma do 48 hodin, záruka až 12 let. Vzorkovna v Radotíně.'
     s = re.sub(r'<title>.*?</title>', f'<title>{T}</title>', s, count=1)
     for k in ['name="description"', 'property="og:description"', 'name="twitter:description"']:

@@ -1,5 +1,5 @@
 import re, json, sys, os
-SP = '/tmp/claude-0/-home-claude/a1dc3947-88ac-503c-910c-cbe14d93fb1b/scratchpad'
+SP = '/home/claude/work'
 DESIGN = SP + '/web/project'
 STATIC = '/home/claude/ar-podlahy/site'
 BASE = 'https://www.ar-podlahy.cz'
@@ -90,40 +90,51 @@ def kontakty_body(L):
     return cards
 
 def onas_body(L, src):
-    stats = src[src.index('<!-- STATS -->'):src.index('</section>', src.index('<!-- STATS -->'))]
     vals = [
-        (I_CHECK, 'Zaměření zdarma do 48 hodin', 'Přijedeme, změříme vlhkost podkladu a skutečné metry. Teprve pak počítáme cenu.'),
-        (I_CHECK, 'Vzorky přivezeme k vám', 'Dřevinu a odstín vybíráte u sebe doma, ve světle, ve kterém bude podlaha ležet.'),
-        (I_CHECK, 'Vlastní realizační tým', '13 lidí, kteří podlahy pokládají a renovují každý den. Práci nepřeprodáváme subdodavatelům.'),
-        (I_CHECK, 'Záruka a péče po předání', 'Záruka až 12 let na materiál, 24 měsíců na práci. Sada na údržbu zdarma u zakázek nad 100 m².'),
+        (I_CHECK, 'Osobní přístup ve vzorkovně', 'V naší prodejně v Radotíně si materiály osaháte naživo, porovnáte odstíny na denním světle a vše s námi v klidu proberete u kávy.'),
+        (I_CHECK, 'Řemeslo od A do Z', 'Od poradenství přes zaměření do 48 hodin a dokonalou přípravu podkladu až po pokládku nebo renovaci starých parket.'),
+        (I_CHECK, 'Zkušenosti prověřené časem', 'Tým 13 stálých podlahářů zvládne moderní vinyl na podlahové topení i památkovou obnovu historických kazetových parket.'),
+        (I_CHECK, 'Spolehlivost a férové jednání', 'Co si na začátku domluvíme, to platí – termíny, rozpočet i čistota po předání hotového díla.'),
     ]
     vcards = ''.join(f'<div style="{CARD}">{i}<strong style="font-size: 18px;">{t}</strong><p style="margin: 0; font-size: 15px; line-height: 1.65; color: #4a443b;">{d}</p></div>' for i, t, d in vals)
+    refs = [
+        ('Historické a reprezentační prostory', 'Renovace Staroměstské radnice, Brožíkova sálu a Jiříkovy síně v prostorách pražského orloje. Památková renovace vídeňských a benátských kazetových parket na Apoštolské nunciatuře, opravy mozaikových parket v historické budově Ministerstva pro místní rozvoj na Staroměstském náměstí, prostory Goethe-Institutu na nábřeží, kanceláře Národního muzea a parkety v Kramářově vile.'),
+        ('Veřejné instituce a kanceláře', 'Dlouhodobě pečujeme o podlahy pro Hlavní město Prahu, Ministerstvo pro místní rozvoj, Městskou část Praha 6, Zdravotnickou záchrannou službu hl. m. Prahy, Generální ředitelství cel, Ministerstvo zemědělství, Diplomatický servis, stadion AC Sparta Praha, Kulturní středisko města Ústí nad Labem a desítky pražských škol a školek.'),
+        ('Developerské projekty', 'Obytný komplex Gutova v Praze: 420 bytů v jedné realizaci a 31 725 m² standardních i nadstandardních podlahových krytin podle přání klientů. Novostavby na Starochodovské: 9 200 m² nadstandardních masivních dřevěných podlah.'),
+        ('Rodinné domy a byty', 'Kompletní realizace velkoformátových masivních a vinylových podlah, teras, schodů i interiérových dveří na míru.'),
+        ('Bytová družstva', 'Desítky bytových domů pro správy nemovitostí, hlavně ve společných prostorách.'),
+        ('Zajímavost', 'Dodávali jsme a pokládali koberce pro plánovanou návštěvu papeže Františka v Tetíně při svatoludmilské pouti v září 2021. Papež nakonec ze zdravotních důvodů nedorazil a hlavní mši sloužil vídeňský arcibiskup kardinál Christoph Schönborn.'),
+    ]
+    rcards = ''.join(f'<div style="{CARD}"><strong style="font-size: 18px;">{t}</strong><p style="margin: 0; font-size: 15px; line-height: 1.65; color: #4a443b;">{d}</p></div>' for t, d in refs)
     return f'''<!-- PŘÍBĚH -->
 <section style="{WRAP} display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(28px, 4vw, 56px); align-items: center;">
 <div style="display: flex; flex-direction: column; gap: 18px;">
 <span style="{EYE}">Kdo jsme</span>
-<h2 style="{H2}">Rodinná podlahářská firma z Radotína, od roku 1991</h2>
-<p style="{P}">AR podlahy pokládá a renovuje podlahy už 35 let. Dnes máme vlastní showroom v Praze-Radotíně a třináctičlenný realizační tým. Za tu dobu jsme položili a zrenovovali přes 1 000 000 m² podlah.</p>
-<p style="{P}">Děláme dřevěné, vinylové a PVC podlahy, parkety, laminát, korek i koberce, renovace a broušení parket a interiérové i vchodové dveře. Jako generální dodavatel zajistíme i rekonstrukce a stavby na klíč. Pracujeme v rodinných domech a bytech v Praze a Středočeském kraji, ale i v památkových objektech, kde se historická podlaha nesmí poškodit.</p>
+<h2 style="{H2}">Poctivé podlahářské řemeslo už od roku 1990</h2>
+<p style="{P}">Když se v květnu roku 1990 začaly v Česku psát nové podnikatelské příběhy, vznikla i naše firma. Zakladatel Aleš Sebastianides tehdy začínal s jasnou myšlenkou: dělat podlahy tak poctivě a precizně, aby se pod každou zakázku mohl s klidným svědomím podepsat.</p>
+<p style="{P}">Od prvních položených metrů uplynulo více než 35 let. Z živnosti jednoho nadšence vyrostla stabilní rodinná firma, ve které dnes po boku zakladatele působí i Lukáš Sebastianides. Rukama našeho týmu prošlo přes 1 000 000 m² podlah – od útulných obýváků a prvorepublikových bytů přes moderní vily až po historické sály a státní instituce.</p>
 </div>
 <img src="/_blob/0275d72697c972c8689368790242b52b" alt="Zrenovovaná parketová podlaha od AR podlahy" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; display: block;">
-</section>
-
-<!-- VÝZNAMNÉ ZAKÁZKY -->
-<section style="max-width: 1240px; margin: 0 auto; padding: clamp(56px, 6vw, 80px) 24px clamp(56px, 6vw, 80px); display: flex; flex-direction: column; gap: 24px;">
-<div style="display: flex; flex-direction: column; gap: 14px;"><span style="{EYE}">Významné zakázky</span><h2 style="{H2}">Kde všude už naše podlahy leží</h2></div>
-<ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); column-gap: 40px;"><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Pražský hrad</li><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Úřad vlády ČR</li><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Kramářova vila</li><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Apoštolská nunciatura</li><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Palác Myslbek</li><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Fotbalový stadion AC Sparta Praha</li><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Řízení letového provozu Ruzyně</li><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Síť prodejen O2 po celé ČR</li><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Metropole Zličín</li><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Český statistický úřad</li><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Knihovna-depozitář MFF UK</li><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Budova Geofyziky Barrandov</li><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Slepecký areál Řepy</li><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Budova firmy ZEPTER</li><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Restaurace Pod křídlem tmy</li><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Ministerstvo místního rozvoje</li><li style="padding: 14px 0; border-bottom: 1px solid #e0d6c6; font-size: 16px; font-weight: 700;">Ministerstvo zemědělství</li></ul>
 </section>
 
 <!-- JAK PRACUJEME -->
 <section style="background: #ece5d8;">
 <div style="{WRAP} display: flex; flex-direction: column; gap: 32px;">
-<div style="max-width: 720px; display: flex; flex-direction: column; gap: 14px;">
-<span style="{EYE}">Jak pracujeme</span>
-<h2 style="{H2}">Na čem si zakládáme</h2>
+<div style="max-width: 760px; display: flex; flex-direction: column; gap: 14px;">
+<span style="{EYE}">Proč my</span>
+<h2 style="{H2}">Proč si zákazníci vybírají právě nás</h2>
+<p style="{P}">Věříme, že podlaha tvoří základ každého domova a má vám sloužit desítky let bez jediného vrznutí. Proto ke každému prostoru přistupujeme tak, jako bychom ho dělali pro sebe.</p>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">{vcards}</div>
 </div>
+</section>
+
+<!-- VÝZNAMNÉ ZAKÁZKY -->
+<section style="{WRAP} display: flex; flex-direction: column; gap: 28px;">
+<div style="max-width: 760px; display: flex; flex-direction: column; gap: 14px;"><span style="{EYE}">Reference</span><h2 style="{H2}">Kde všude už naše podlahy slouží</h2>
+<p style="{P}">Za více než tři dekády jsme nasbírali stovky referencí v soukromých domech i významných veřejných budovách. Máme za sebou přes 280 jednorázových i dlouhodobých rámcových zakázek pro stát a samosprávy.</p></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">{rcards}</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3d3830; font-weight: 600;">Plánujete novou podlahu, dveře nebo chcete vdechnout nový život starým parketám? Stavte se za námi do vzorkovny v Karlické ulici v Praze-Radotíně nebo nám zavolejte. Rádi si vyslechneme vaše představy a najdeme řešení, které bude dávat smysl vašemu prostoru i rozpočtu.</p>
 </section>
 
 '''
@@ -256,10 +267,10 @@ def page(kind, src, target):
         keep_stats = False
         extra = ''
     else:
-        title = 'O nás – rodinná podlahářská firma od roku 1991 | AR podlahy'
-        desc = 'AR podlahy je rodinná podlahářská firma z Prahy-Radotína. 35 let praxe, 13 lidí v týmu, přes 1 000 000 m² podlah a reference od Pražského hradu po rodinné domy.'
+        title = 'O nás – rodinná podlahářská firma od roku 1990 | AR podlahy'
+        desc = 'AR podlahy je rodinná podlahářská firma z Prahy-Radotína, založená v květnu 1990. Přes 35 let praxe, 13 stálých podlahářů, přes 1 000 000 m² podlah a přes 280 zakázek pro stát a samosprávy.'
         path = '/o-nas/'; crumb = 'O nás'
-        hero = subhero('O nás', 'Podlahy děláme poctivě už od roku 1991', 'Jsme rodinná firma z Prahy-Radotína. Každou podlahu bereme jako by ležela u nás doma, ať jde o byt, vilu, nebo Pražský hrad.', crumb, L)
+        hero = subhero('O nás', 'Podlahy děláme poctivě už od roku 1990', 'Rodinná firma z Prahy-Radotína, kterou založil Aleš Sebastianides a dnes ji vede spolu s Lukášem Sebastianidesem. Každou podlahu děláme, jako by ležela u nás doma.', crumb, L)
         body = onas_body(L, src)
         ptype = 'AboutPage'
         keep_stats = True
@@ -283,8 +294,8 @@ def page(kind, src, target):
         {"@type": "BreadcrumbList", "@id": url + "#drobecky", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Úvod", "item": BASE + "/"},
             {"@type": "ListItem", "position": 2, "name": crumb, "item": url}]},
-        {"@type": "HomeAndConstructionBusiness", "@id": BASE + "/#firma", "name": "AR podlahy", "url": BASE + "/", "description": "Pokládka a renovace dřevěných podlah, parket, vinylu, PVC a koberců v Praze a Středočeském kraji od roku 1991.", "hasMap": "https://www.google.com/maps?cid=7053343600020491698", "sameAs": ["https://www.facebook.com/Podlahy-Praha-349586465068872/", "https://www.google.com/maps?cid=7053343600020491698"], "areaServed": [{"@type": "City", "name": "Praha"}, {"@type": "AdministrativeArea", "name": "Středočeský kraj"}],
-         "telephone": "+420605257236", "email": "info@ar-podlahy.cz", "foundingDate": "1991", "taxID": "12584878",
+        {"@type": "HomeAndConstructionBusiness", "@id": BASE + "/#firma", "name": "AR podlahy", "url": BASE + "/", "description": "Pokládka a renovace dřevěných podlah, parket, vinylu, PVC a koberců v Praze a Středočeském kraji od roku 1990.", "hasMap": "https://www.google.com/maps?cid=7053343600020491698", "sameAs": ["https://www.facebook.com/Podlahy-Praha-349586465068872/", "https://www.google.com/maps?cid=7053343600020491698"], "areaServed": [{"@type": "City", "name": "Praha"}, {"@type": "AdministrativeArea", "name": "Středočeský kraj"}],
+         "telephone": "+420605257236", "email": "info@ar-podlahy.cz", "foundingDate": "1990", "taxID": "12584878",
          "address": {"@type": "PostalAddress", "streetAddress": "Karlická 834/10", "addressLocality": "Praha 16 – Radotín", "postalCode": "153 00", "addressCountry": "CZ"},
          "openingHoursSpecification": [
              {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "10:00", "closes": "17:00"},
@@ -316,7 +327,7 @@ def page(kind, src, target):
     out = out.replace('REALIMG/', 'img/real/' if target == 'design' else '/img/real/')
     if target == 'design':
         out = out.replace('<a href="/" aria-label="AR podlahy – úvod"', '<a href="Main.dc.html" aria-label="AR podlahy – úvod"')
-        out = re.sub(r'"\$preview":\{"width":1440,"height":\d+\}', '"$preview":{"width":1440,"height":%d}' % {'onas': 4650, 'kontakty': 3700, 'drevo': 6200, 'parkety': 6100, 'pvc': 5050, 'koberce': 5050, **{"historicke": 5500, "laminat": 4500, "korek": 4500, "sterky": 3850, "terasy": 5050, "podklad": 5050, "dvere": 3800, "vchodove": 3800, "rekonstrukce": 5500}}.get(kind, 4550), out)
+        out = re.sub(r'"\$preview":\{"width":1440,"height":\d+\}', '"$preview":{"width":1440,"height":%d}' % {'onas': 5450, 'kontakty': 3700, 'drevo': 6250, 'parkety': 6050, 'pvc': 5000, 'koberce': 5000, 'vinyl': 4550, 'historicke': 5450, 'laminat': 4500, 'korek': 3750, 'sterky': 3900, 'terasy': 5100, 'podklad': 5050, 'dvere': 3800, 'vchodove': 3750, 'rekonstrukce': 5350}.get(kind, 4550), out)
     else:
         if kind in LANDS:
             out = out.replace('</body>', __import__('landing').JS + '\n</body>', 1)

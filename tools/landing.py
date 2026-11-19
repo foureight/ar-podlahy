@@ -148,7 +148,7 @@ def hero(c, L):
 </div>
 <div style="border-top: 1px solid rgba(255,255,255,.12); background: rgba(10,10,10,.55);">
 <div style="max-width: 1240px; margin: 0 auto; padding: 22px 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; text-align: center;">
-<div><div style="font-size: clamp(22px, 2.4vw, 32px); font-weight: 900; color: #c9a46a; line-height: 1;">1991</div><div style="font-size: 13px; color: rgba(255,255,255,.72); margin-top: 6px;">na trhu od roku</div></div>
+<div><div style="font-size: clamp(22px, 2.4vw, 32px); font-weight: 900; color: #c9a46a; line-height: 1;">1990</div><div style="font-size: 13px; color: rgba(255,255,255,.72); margin-top: 6px;">na trhu od roku</div></div>
 <div><div style="font-size: clamp(22px, 2.4vw, 32px); font-weight: 900; color: #c9a46a; line-height: 1;">13</div><div style="font-size: 13px; color: rgba(255,255,255,.72); margin-top: 6px;">lidí v týmu</div></div>
 <div><div style="font-size: clamp(22px, 2.4vw, 32px); font-weight: 900; color: #c9a46a; line-height: 1;">48 h</div><div style="font-size: 13px; color: rgba(255,255,255,.72); margin-top: 6px;">do zaměření</div></div>
 </div>
@@ -208,7 +208,7 @@ def refs_section(src, c):
     if not c['refs']:
         return f'''<!-- REFERENCE -->
 <section style="max-width: 1240px; margin: 0 auto; padding: 0 24px clamp(48px, 6vw, 72px);">
-<div style="border-left: 3px solid #c9a46a; padding: 6px 0 6px 20px; display: flex; flex-direction: column; gap: 8px;"><span style="{EYE}">Od roku 1991</span><p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3d3830; font-weight: 600;">Podlahy pokládáme v bytech, domech, kancelářích i v objektech, jako je Úřad vlády, Kramářova vila nebo Pražský hrad.</p></div>
+<div style="border-left: 3px solid #c9a46a; padding: 6px 0 6px 20px; display: flex; flex-direction: column; gap: 8px;"><span style="{EYE}">Od roku 1990</span><p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3d3830; font-weight: 600;">Podlahy pokládáme v bytech, domech, kancelářích i v objektech, jako je Úřad vlády, Kramářova vila nebo Pražský hrad.</p></div>
 </section>
 
 '''
@@ -294,12 +294,12 @@ g('calc-cta').addEventListener('click',function(){var F=g('poptavka-form');F.typ
 var F=g('poptavka-form'),S=g('poptavka-stav'),EP='__EP__';
 if(F)F.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(F);
 if(EP){fetch(EP,{method:'POST',body:d,headers:{'Accept':'application/json'}}).then(function(r){if(!r.ok)throw 0;F.reset();S.textContent='Děkujeme, ozveme se do 48 hodin.'}).catch(function(){S.textContent='Odeslání se nepovedlo, zavolejte nám prosím na +420 605 257 236.'});return}
-var b=[];d.forEach(function(v,k){if(v)b.push(k+': '+v)});location.href='mailto:info@ar-podlahy.cz?subject='+encodeURIComponent('Poptávka – '+(F.typ.value||'podlaha'))+'&body='+encodeURIComponent(b.join('\\n'))});
+var b=[];d.forEach(function(v,k){if(v)b.push(k+': '+v)});location.href='mailto:poptavka@ar-podlahy.cz?subject='+encodeURIComponent('Poptávka – '+(F.typ.value||'podlaha'))+'&body='+encodeURIComponent(b.join('\\n'))});
 })();
 </script>""".replace('__EP__', FORM_ENDPOINT) % STERKA
 
 PHOTOS = {
- 'drevo': [('drevo-tmave.jpg','Tmavá dřevěná podlaha v obývacím pokoji'),('drevo-sklo.jpg','Dřevěná podlaha s prosklenou částí'),('parkety-rybi-kost-2.jpg','Parkety v kladu rybí kost')],
+ 'drevo': [('drevo-tmave.jpg','Tmavá dřevěná podlaha v obývacím pokoji'),('drevo-sklo.jpg','Dřevěná podlaha s prosklenou částí'),('podlaha-prkna.jpg','Dřevěná podlaha z prken')],
  'parkety': [('parkety-rybi-kost-1.jpg','Parkety rybí kost po pokládce'),('parkety-rybi-kost-2.jpg','Lakované parkety rybí kost'),('parkety-mozaika.jpg','Mozaikové parkety')],
  'historicke': [('historicka-1.jpg','Obnovená historická parketová podlaha'),('historicka-2.jpg','Reprezentativní interiér s historickými parketami'),('parkety-mozaika.jpg','Mozaikový vzor parket')],
  'pvc': [('pvc-1.jpg','Celoplošně lepené PVC'),('pvc-vzor.jpg','PVC v chodbě'),('schody-pvc.jpg','PVC na schodech')],

@@ -1,5 +1,5 @@
 import re
-SP='/tmp/claude-0/-home-claude/a1dc3947-88ac-503c-910c-cbe14d93fb1b/scratchpad'
+SP='/home/claude/work'
 FILES=[SP+'/web/project/Main.dc.html',SP+'/web/project/Mobil-1.dc.html',SP+'/web/project/Mobil-2.dc.html','/home/claude/ar-podlahy/site/index.html']
 R=[
  ('záruka na materiál 6 let','záruka na materiál 12 let'),
