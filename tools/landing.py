@@ -176,7 +176,7 @@ def calc_section(c):
     mat = f'{q * m:,}'.replace(',', ' ') + ' Kč' if m else ('–' if m == 0 else 'po zaměření')
     lab = f'{50 * l:,}'.replace(',', ' ') + ' Kč' if l else 'po zaměření'
     tot = (q * (m or 0)) + (50 * (l or 0))
-    tot_s = (('' if (m is not None and l) else 'od ') + f'{tot:,}'.replace(',', ' ') + ' Kč') if tot else 'po zaměření'
+    tot_s = ('od ' + f'{tot:,}'.replace(',', ' ') + ' Kč') if tot else 'po zaměření'
     return f'''<!-- KALKULAČKA -->
 <section id="kalkulacka" style="background: #1a1a1a; color: #fff;">
 <div style="{WRAP} display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px 64px; align-items: center;">
@@ -289,7 +289,7 @@ function u(){if(!t)return;var o=t.options[t.selectedIndex],a=Math.max(0,parseFlo
 if(ms==='0'){g('calc-mat').textContent='–';g('calc-mat-d').textContent='(bez materiálu)'}else if(mat){g('calc-mat').textContent=f(q*mat);g('calc-mat-d').textContent='('+q+' m² s prořezem 15 %%)'}else{g('calc-mat').textContent='po zaměření';g('calc-mat-d').textContent='';exact=false}
 g('calc-lab-d').textContent='('+a+' m²)';if(lab){g('calc-lab').textContent=f(a*lab)}else{g('calc-lab').textContent='po zaměření';exact=false}
 var st=s&&s.checked?a*ST:0;g('calc-st-row').style.display=st?'flex':'none';g('calc-st').textContent=f(st);g('calc-st-d').textContent='('+a+' m²)';
-var sum=(ms==='0'?0:q*mat)+a*lab+st;g('calc-total').textContent=sum?(exact?'':'od ')+f(sum):'po zaměření'}
+var sum=(ms==='0'?0:q*mat)+a*lab+st;g('calc-total').textContent=sum?'od '+f(sum):'po zaměření'}
 if(t){[t,m,s].forEach(function(e){if(e){e.addEventListener('input',u);e.addEventListener('change',u)}});u();
 g('calc-cta').addEventListener('click',function(){var F=g('poptavka-form');F.typ.value=t.options[t.selectedIndex].text;F.plocha.value=m.value+' m²'+(s&&s.checked?' + stěrka':'')})}
 var F=g('poptavka-form'),S=g('poptavka-stav'),EP='__EP__';if(F){var CA=2+Math.floor(Math.random()*8),CB=1+Math.floor(Math.random()*9),CQ=F.querySelector('.cap-q');if(CQ)CQ.textContent=CA+' + '+CB;}
