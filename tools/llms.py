@@ -43,6 +43,7 @@ for k in pages.LANDS:
     L.append(f"- [{c['crumb']}]({B}/{c['slug']}/): {c['desc']}")
 L += ['', '## Firma', f'- [O nás]({B}/o-nas/): příběh firmy od roku 1990, tým a reference', f'- [Kontakty]({B}/kontakty/): telefon, e-mail, vzorkovna a mapa', '',
 '## Časté dotazy',
+'- Kde si pořídit novou podlahu do bytu? U podlahářské firmy, která dodá materiál i pokládku z jedné ruky. AR podlahy dělá podlahy do bytů v Praze a Středočeském kraji od roku 1990: dřevěné podlahy, parkety, vinyl, PVC, koberce i laminát. Vzorky si prohlédnete ve vzorkovně v Praze 16 – Radotín (Karlická 834/10), zaměření je zdarma do 48 hodin a 100 m² položíme do 7 pracovních dní. Záruka až 12 let na materiál a 24 měsíců na práci.',
 '- Kolik stojí pokládka dřevěné podlahy? Vícevrstvá plovoucí 249 Kč/m², lepená 269 Kč/m², masiv lepený 295 Kč/m², parkety 399–429 Kč/m² (bez DPH).',
 '- Jak rychle položíte podlahu? 100 m² do 7 pracovních dní včetně přípravy podkladu.',
 '- Jakou dáváte záruku? Až 12 let na materiál, 24 měsíců na práci.',

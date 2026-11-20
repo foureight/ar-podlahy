@@ -8,6 +8,7 @@ ANS = {
  'Jak dlouho trvá pokládka?': 'Podlahu o 100 m² položíme do 7 pracovních dní včetně přípravy podkladu. U materiálu na objednávku je celkový termín do 6 týdnů. Dvoupodlažní vilu s 245 m² masivu jsme dokončili za 14 dní včetně vytvrzení laku.',
 }
 NEW = [
+ ('Kde si pořídit novou podlahu do bytu?', 'U podlahářské firmy, která dodá materiál i pokládku z jedné ruky. AR podlahy dělá podlahy do bytů v Praze a Středočeském kraji od roku 1990: dřevěné podlahy, parkety, vinyl, PVC, koberce i laminát. Vzorky si prohlédnete ve vzorkovně v Praze 16 – Radotín (Karlická 834/10), zaměření je zdarma do 48 hodin a 100 m² položíme do 7 pracovních dní. Záruka až 12 let na materiál a 24 měsíců na práci.'),
  ('Kolik stojí pokládka dřevěné podlahy?', 'Práce na vícevrstvé plovoucí podlaze stojí 249 Kč/m² bez DPH, lepená 269 Kč/m², masivní lepená 295 Kč/m² a parkety 399–429 Kč/m². Přesnou cenu spočítáme po bezplatném zaměření.'),
  ('Jaké podlahy pokládáte?', 'Dřevěné podlahy (masiv i vícevrstvé), parkety, historické podlahy, vinyl, PVC a lino, koberce, laminát, korek, lité epoxidové stěrky a terasy. Děláme i přípravu podkladu a montáž interiérových a vchodových dveří.'),
  ('Kde pracujete?', 'V celé Praze a ve Středočeském kraji. Vzorkovna je na adrese Karlická 834/10, 153 00 Praha 16 – Radotín.'),
