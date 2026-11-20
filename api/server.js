@@ -32,7 +32,7 @@ function limited(ip) {
 }
 
 const LABELS = {
-  jmeno: 'Jméno', telefon: 'Telefon', email: 'E-mail', lokalita: 'Lokalita',
+  jmeno: 'Jméno', prijmeni: 'Příjmení', telefon: 'Telefon', email: 'E-mail', misto: 'Místo', kraj: 'Kraj', lokalita: 'Lokalita',
   plocha: 'Plocha', typ: 'Typ podlahy', schody: 'Schody', dvere: 'Dveře', chci: 'Chci',
   zprava: 'Zpráva', kalkulace: 'Kalkulace', zdroj: 'Zdroj', stranka: 'Stránka',
   souhlas_gdpr: 'Souhlas GDPR',
@@ -66,7 +66,7 @@ http.createServer((req, res) => {
     if (clean(d._honey)) return send(res, 200, { success: 'true' }, origin); // robot – tváříme se, že prošlo
     const ip = String(req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
     if (limited(ip)) return send(res, 429, { success: 'false', message: 'too many' }, origin);
-    const jmeno = clean(d.jmeno, 200), telefon = clean(d.telefon, 50), email = clean(d.email, 200);
+    const jmeno = [clean(d.jmeno, 100), clean(d.prijmeni, 100)].filter(Boolean).join(' '), telefon = clean(d.telefon, 50), email = clean(d.email, 200);
     if (!jmeno || !telefon || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !clean(d.souhlas_gdpr)) {
       return send(res, 400, { success: 'false', message: 'missing fields' }, origin);
     }
