@@ -221,6 +221,6 @@ zerops:
         - port: 3000
           httpSupport: true
       envVariables:
-        MAIL_TO: poptavka@ar-podlahy.cz
+        MAIL_TO: poptavky@ar-podlahy.cz
         ALLOWED_ORIGINS: https://redesign.ar-podlahy.cz,https://ar-podlahy.cz,https://www.ar-podlahy.cz
       start: node server.js

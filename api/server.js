@@ -1,13 +1,13 @@
 // Poptávkový formulář AR podlahy → e-mail přes SMTP.
 // Proměnné prostředí (nastavují se v Zerops, ne v kódu):
 //   SMTP_HOST, SMTP_PORT (465 = SSL, 587 = STARTTLS), SMTP_USER, SMTP_PASS
-//   MAIL_TO (výchozí poptavka@ar-podlahy.cz), MAIL_FROM (výchozí SMTP_USER)
+//   MAIL_TO (výchozí poptavky@ar-podlahy.cz), MAIL_FROM (výchozí SMTP_USER)
 //   ALLOWED_ORIGINS (čárkami oddělené domény webu)
 const http = require('http');
 const nodemailer = require('nodemailer');
 
 const PORT = Number(process.env.PORT || 3000);
-const MAIL_TO = process.env.MAIL_TO || 'poptavka@ar-podlahy.cz';
+const MAIL_TO = process.env.MAIL_TO || 'poptavky@ar-podlahy.cz';
 const MAIL_FROM = process.env.MAIL_FROM || process.env.SMTP_USER;
 const ORIGINS = (process.env.ALLOWED_ORIGINS ||
   'https://redesign.ar-podlahy.cz,https://ar-podlahy.cz,https://www.ar-podlahy.cz')
