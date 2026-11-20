@@ -827,7 +827,7 @@ o._subject='Poptávka z webu – '+(o.typ||'podlaha')+(o.plocha?' ('+o.plocha+')
 var B=F.querySelector('button[type=submit]');B.disabled=true;S.textContent='Odesílám…';
 fetch('https://api-2f78-3000.prg1.zerops.app/poptavka',{method:'POST',body:JSON.stringify(o),headers:{'Content-Type':'application/json','Accept':'application/json'}})
 .then(function(r){return r.json()}).then(function(j){if(String(j.success)!=='true')throw 0;F.reset();S.textContent='Děkujeme, ozveme se do 48 hodin.';if(B){B.dataset.t=B.dataset.t||B.textContent;B.dataset.bg=B.dataset.bg||B.style.background;B.textContent='✓ Zpráva odeslána';B.style.background='#3f7d4a';B.dataset.ok='1';F.addEventListener('input',function rs(){B.textContent=B.dataset.t;B.style.background=B.dataset.bg;B.dataset.ok='';B.disabled=false;F.removeEventListener('input',rs)})}})
-.catch(function(){S.textContent='Odeslání se nepovedlo, zavolejte nám prosím na +420 605 257 236 nebo napište na poptavky@ar-podlahy.cz.'}).then(function(){if(!B.dataset.ok)B.disabled=false})});})();
+.catch(function(){S.textContent='Odeslání se nepovedlo, zavolejte nám prosím na +420 605 257 236 nebo napište na info@ar-podlahy.cz.'}).then(function(){if(!B.dataset.ok)B.disabled=false})});})();
 </script>
 </div>
 </section>

@@ -11,7 +11,7 @@ L = ['# AR podlahy', '',
 '- Vzorkovna: Karlická 834/10, 153 00 Praha 16 – Radotín',
 '- Otevírací doba vzorkovny: út 10–17, st–čt 10–19, pá 10–12',
 '- Telefon: +420 605 257 236',
-'- E-mail: info@ar-podlahy.cz, poptávky: poptavky@ar-podlahy.cz',
+'- E-mail: info@ar-podlahy.cz',
 '- IČO 12584878, DIČ CZ5906111046',
 '- Oblast působnosti: Praha a Středočeský kraj',
 '- Tým: 13 stálých podlahářů; přes 1 000 000 m² podlah; přes 280 zakázek pro stát a samosprávy',
@@ -62,7 +62,7 @@ for k in pages.LANDS:
         rows.append({k2: v for k2, v in {'polozka': t, 'material_od_kc_m2': m or None, 'pokladka_od_kc_m2': l or None, 'lepidlo_kc_m2': g or None}.items() if v})
     svc.append({'sluzba': c['service'], 'url': f"{B}/{c['slug']}/", 'popis': c['desc'], 'cena_od': c.get('minprice') or None, 'kalkulace': rows or None, 'poznamka': c.get('note')})
 data = {
-  'firma': 'AR podlahy', 'web': B + '/', 'zalozeno': '1990-05', 'telefon': '+420605257236', 'email': 'info@ar-podlahy.cz', 'poptavky': 'poptavky@ar-podlahy.cz',
+  'firma': 'AR podlahy', 'web': B + '/', 'zalozeno': '1990-05', 'telefon': '+420605257236', 'email': 'info@ar-podlahy.cz',
   'adresa': 'Karlická 834/10, 153 00 Praha 16 – Radotín', 'ico': '12584878', 'dic': 'CZ5906111046', 'oblast': ['Praha', 'Středočeský kraj'],
   'oteviraci_doba': {'út': '10–17', 'st': '10–19', 'čt': '10–19', 'pá': '10–12'},
   'zaruka': 'až 12 let na materiál, 24 měsíců na práci', 'termin': 'montáž 100 m² do 7 pracovních dní', 'zamereni': 'zdarma do 48 hodin',
