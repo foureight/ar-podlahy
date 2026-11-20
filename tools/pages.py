@@ -329,8 +329,6 @@ def page(kind, src, target):
     out = head + pre + heros + body + extra + rest
     if kind in LANDS:
         import landing as drevo2
-        out = re.sub(r'<nav aria-label="Odkazy v patičce"[^>]*>\s*<strong[^>]*>Menu</strong>.*?</nav>', '', out, flags=re.S)
-        out = re.sub(r'<details[^>]*>\s*<summary[^>]*>\s*Menu.*?</details>', '', out, count=1, flags=re.S)
         out = out.replace('</style>', drevo2.MBAR_CSS + '\n</style>', 1)
     # links
     out = out.replace('href="#sluzby"', f'href="{L["home"]}#sluzby"').replace('href="#reference"', f'href="{L["home"]}#reference"')
